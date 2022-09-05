@@ -474,13 +474,13 @@ async def me(ctx: interactions.CommandContext):
 # Кнокпи для события
 button_participate_event = interactions.Button(
     style=interactions.ButtonStyle.SECONDARY,
-    label="Учавствовать",
+    label="Участвовать",
     custom_id="participate_event",
 )
 
 button_participate_event_disabled= interactions.Button(
     style=interactions.ButtonStyle.SECONDARY,
-    label="Учавствовать",
+    label="Участвовать",
     custom_id="participate_event_disabled",
     disabled=True
 )
