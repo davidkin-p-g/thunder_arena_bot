@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 
 def check_role(role_1, role_2, role_3, role_4, role_5):
     flag_top = 0

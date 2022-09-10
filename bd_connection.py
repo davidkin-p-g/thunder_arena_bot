@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from platform import python_branch
 from mysql.connector import MySQLConnection
 from mysql.connector import Error
@@ -41,3 +42,5 @@ def execute_query(exec_name, argx = None):
     finally:
         cursor.close()
         conn.close()
+
+_connection()

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from queue import Empty
 from re import I
 import interactions
@@ -14,7 +15,7 @@ from Team_Comp import all_team_comp
 # Тут написано как
 #https://selectel.ru/blog/tutorials/mysql-insert-how-to-add-data-to-a-table/
 
-from bot_info import TOKEN as TOKEN
+from bot_info import TOKEN_test as TOKEN
 # from Add_Player import Add_Player
 # from Team_Comp import Team_Comp
 import bot_info
@@ -141,7 +142,7 @@ bot = interactions.Client(token=TOKEN)
         )
     ]
 )
-async def registration_new(ctx: interactions.CommandContext, user_name, role_1, role_2, role_3, role_4, role_5, rating):
+async def registration_new(ctx, user_name, role_1, role_2, role_3, role_4, role_5, rating):
     try:
         # Проверка на канал использования
         if ctx.channel_id != bot_info.Event_server_id:
@@ -552,7 +553,7 @@ row2 = interactions.ActionRow(
         type=interactions.OptionType.STRING,
         required=True,
         choices=[
-            interactions.Choice(name="Потосовка", value="Потосовка"),
+            interactions.Choice(name="Потасовка", value="Потасовка"),
             interactions.Choice(name="Командный", value="Командный"),
         ]
     ),

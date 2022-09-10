@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import interactions
 
 # Изменение имени
@@ -54,7 +55,7 @@ def me_message(user_events):
                 )
         field2 = interactions.EmbedField(
                     name="Актуальные события:",
-                    value=f"Вы не учавствуете ни в одном событии",
+                    value=f"Вы не участвуете ни в одном событии",
                     inline=False,
                 )
     else:    
@@ -79,7 +80,7 @@ def me_message(user_events):
                 else:
                     event = event + f' **Событие** {user_event[21]} УЖЕ ИДЕТ.\n Ваша команда {user_event[14]}  роль {user_event[15]}.\n\n'
         if event == '':
-            event = 'Вы не учавствуете ни в одном событии'
+            event = 'Вы не участвуете ни в одном событии'
         field1 = interactions.EmbedField(
                     name="Всего игр:",
                     value=f"{len}",
@@ -161,7 +162,7 @@ def startevent_end_message(event_type, event_name, event_description):
             fields=[
                 interactions.EmbedField(
                 name="Время начала",
-                value=f"Уже поздновато",
+                value=f"Событие завершено",
                 inline=True,
                 ),
                 interactions.EmbedField(

@@ -4,12 +4,13 @@
 
 DELIMITER //
 CREATE PROCEDURE add_user (in id_user bigint, in user_name varchar(100), in rating varchar(20), in rating_value int,
-in role_1 varchar(10), in role_2 varchar(10), in role_3 varchar(10), in role_4 varchar(10), in role_5 varchar(10))
+in role_1 varchar(10), in role_2 varchar(10), in role_3 varchar(10), in role_4 varchar(10), in role_5 varchar(10),
+in discord_name varchar(100))
 LANGUAGE SQL 
 DETERMINISTIC 
 BEGIN 
-	INSERT INTO users(id, user_name, rating, rating_value, role_1, role_2, role_3, role_4, role_5) 
-	VALUES (id_user, user_name, rating, rating_value, role_1, role_2, role_3, role_4, role_5);
+	INSERT INTO users(id, user_name, rating, rating_value, role_1, role_2, role_3, role_4, role_5, discord_name) 
+	VALUES (id_user, user_name, rating, rating_value, role_1, role_2, role_3, role_4, role_5, discord_name);
 END//
 
 -- Проверка
@@ -45,6 +46,24 @@ END//
 
 -- Проверка
 -- call check_user(178963010751168512, 'asd')
+
+DELIMITER //
+CREATE PROCEDURE check_user_to_me (in id_user bigint) 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'информация о пользователе' 
+BEGIN 
+	SELECT *,(DATE(e.date_start)-DATE(now()))*86400  + (HOUR(e.date_start)-HOUR(now()))*3600 + (MINUTE(e.date_start)-MINUTE(now()))*60 + (SECOND(e.date_start) - SECOND(now())) as sec
+    FROM users as u
+	left JOIN event_to_users as eu on eu.id_user = u.id
+    left JOIN events as e on eu.id_event = e.id
+    WHERE u.id = id_user
+    Order by e.status DESC, sec;
+END//
+
+-- Проверка
+-- call check_user_to_me(178963010751168512)
 
 DELIMITER //
 CREATE PROCEDURE all_users () 
@@ -122,7 +141,7 @@ BEGIN
 END//
 
 -- Проверка
--- call check_event(1)
+-- call check_event(1009290709418909777)
 
 -- ------------------------------------
 -- СОБЫТИЯ + ПОЛЬЗОВАТЕЛИ
@@ -147,6 +166,36 @@ END//
 
 -- Проверка
 -- call add_user_to_event(1, 178963010751168513)
+
+DELIMITER //
+CREATE PROCEDURE edit_reserve_user_to_event (id_us bigint, id_ev bigint) 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'Отметка о посмещении в запас' 
+BEGIN 
+	UPDATE event_to_users
+    SET reserve = 1
+    WHERE id_user = id_us and id_event = id_ev;
+END//
+
+-- Проверка
+-- нет
+
+DELIMITER //
+CREATE PROCEDURE edit_team_role_user_to_event (id_us bigint, id_ev bigint, team varchar(100), role varchar(10)) 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'Отметка о роли и команде' 
+BEGIN 
+	UPDATE event_to_users
+    SET team = team, role = role
+    WHERE id_user = id_us and id_event = id_ev;
+END//
+
+-- Проверка
+-- нет
 
 DELIMITER //
 CREATE PROCEDURE delete_user_to_event (id_ev bigint, id_us bigint) 
@@ -192,12 +241,32 @@ SQL SECURITY DEFINER
 COMMENT 'Проверка всех регистрированных на событие пользователей' 
 BEGIN         
 SELECT * 
-FROM event_to_users 
+FROM event_to_users as eu 
+JOIN users as u on eu.id_user = u.id
+JOIN events as e on eu.id_event = e.id
 WHERE id_event = id_ev;
 END//
 
 -- Проверка
--- call all_user_to_event(1)
+-- call all_user_to_event(1009281495585800274)
+
+DELIMITER //
+CREATE PROCEDURE all_user_to_event_team (id_ev bigint) 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'Проверка всех регистрированных на событие пользователей по командам' 
+BEGIN         
+SELECT * 
+FROM event_to_users as eu 
+JOIN users as u on eu.id_user = u.id
+JOIN events as e on eu.id_event = e.id
+WHERE id_event = id_ev
+ORDER BY team;
+END//
+
+-- Проверка
+-- call all_user_to_event_team(1009310514985324627)
 
 DELIMITER //
 CREATE PROCEDURE add_error (in id_user bigint, in channel varchar(200), in member varchar(200),

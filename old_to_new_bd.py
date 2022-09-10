@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
 import json
 from bd_connection import execute_query
 
 def old_to_new_bd():
-    with open(r'C:\Users\david\PycharmProjects\TA\ta-bot\Data_Base.json') as bd: # Поставить ссылку на бд
+    with open(r'/home/d/davidkue/davidkue.beget.tech/Data_Base.json', encoding="cp1251") as bd: # Поставить ссылку на бд
         users = json.load(bd)
     #user = json.dumps(templates, ensure_ascii=False)
     raiting_value_list = {
