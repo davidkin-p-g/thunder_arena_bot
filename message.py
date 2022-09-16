@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import interactions
+from bot_info import Url_thunder_bot_image
 
 # Изменение имени
 def change_message(author, user_name, rank, role_1, role_2, role_3, role_4, role_5, comand):
@@ -95,7 +96,7 @@ def me_message(user_events):
     fields_embed.append(field1)
     fields_embed.append(field2)
     embed = interactions.Embed(
-            color=0x1100fa,
+            color=0x344059,
             title=f"ME",
             description=f"Инициатор Запроса: {user_events[0][10]}",
             footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации\nПишем ботов. По вопросам @Suglinca#6900"),
@@ -114,7 +115,8 @@ def startevent_message(event_type, event_name, event_description, event_date_sta
     hour = time.split(':')[0]
     minute = time.split(':')[1]
     embed = interactions.Embed(
-            color=0x1100fa,
+            thumbnail=interactions.EmbedImageStruct(url=Url_thunder_bot_image),
+            color=0x344059,
             title=f"Событие {event_type} {event_name}",
             description=f"{event_description}",
             footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации\nПишем ботов. По вопросам @Suglinca#6900"),
@@ -132,7 +134,8 @@ def startevent_message(event_type, event_name, event_description, event_date_sta
 # Событие началось
 def startevent_go_message(event_type, event_name, event_description):
     embed = interactions.Embed(
-            color=0x00fa53,
+            thumbnail=interactions.EmbedImageStruct(url=Url_thunder_bot_image),
+            color=0x4F638C,
             title=f"Событие {event_type} {event_name} |УЖЕ НАЧАЛОСЬ| ",
             description=f"{event_description}",
             footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации\nПишем ботов. По вопросам @Suglinca#6900"),
@@ -155,7 +158,8 @@ def startevent_go_message(event_type, event_name, event_description):
 # Событие закончилось
 def startevent_end_message(event_type, event_name, event_description):
     embed = interactions.Embed(
-            color=0x868887,
+            thumbnail=interactions.EmbedImageStruct(url=Url_thunder_bot_image),
+            color=0xC1C7D9,
             title=f"Событие {event_type} {event_name} |К сожалению завершено| ",
             description=f"{event_description}",
             footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации\nПишем ботов. По вопросам @Suglinca#6900"),
@@ -198,7 +202,7 @@ def users_to_event_message(user_to_event, admin= False):
 
     embed = interactions.Embed(
             color=0x1100fa,
-            title=f"Список участников в событии {event_name}",
+            title=f"Список участников в событии(Не является распределением по командам, оно будет позже) {event_name}",
             description=f"На данный момент участников: {users_count}",
             footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации.\nСписок может быть не полным если количество участников больше 125.\nПишем ботов. По вопросам @Suglinca#6900"),
             fields=fields_embed,
@@ -228,7 +232,8 @@ def users_to_event_team_message(user_to_event, admin= False):
         users_team_start += 1
         if users_team_start >= users_count:
             break
-    
+    if val == '':
+        val = 'Запасных нет'
     field.value = val
     fields_embed.append(field)
         

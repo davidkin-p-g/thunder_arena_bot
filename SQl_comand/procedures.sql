@@ -33,6 +33,20 @@ END//
 -- call edit_user(178963010751168512, "Suglinca", "Золото 2", 400, "бот", "мид", "топ", "лес", "сап")
 
 DELIMITER //
+CREATE PROCEDURE edit_user_discord_name (id_user bigint ,discord_name varchar(100)) 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'Изменение дискорд имени пользователя пользователя' 
+BEGIN 
+	UPDATE users
+    SET discord_name = discord_name 
+	WHERE id = id_user;
+END//
+-- Проверка
+-- call edit_user(178963010751168512, "вап")
+
+DELIMITER //
 CREATE PROCEDURE check_user (in id_user bigint) 
 LANGUAGE SQL 
 DETERMINISTIC 

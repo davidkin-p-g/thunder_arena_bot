@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from queue import Empty
 from re import I
+from time import sleep
 import interactions
 
 
@@ -172,6 +173,8 @@ async def registration_new(ctx, user_name, role_1, role_2, role_3, role_4, role_
                         execute_query('add_error', argx)
                         print(res)      
                 else:
+                    # Выдадим роль Учатника
+                    await ctx.author.add_role(bot_info.role_id, ctx.guild_id)
                     # Компановка сообщения
                     message = change_message(ctx.author, user_name, rating, role_1, role_2, role_3, role_4, role_5, 'Новый пользователь')
                     await ctx.send(embeds=message, ephemeral=True)
@@ -471,76 +474,6 @@ async def me(ctx: interactions.CommandContext):
         execute_query('add_error', argx)
         print(ex)
 
-
-# Кнокпи для события
-button_participate_event = interactions.Button(
-    style=interactions.ButtonStyle.SECONDARY,
-    label="Участвовать",
-    custom_id="participate_event",
-)
-
-button_participate_event_disabled= interactions.Button(
-    style=interactions.ButtonStyle.SECONDARY,
-    label="Участвовать",
-    custom_id="participate_event_disabled",
-    disabled=True
-)
-
-button_participate_event_check= interactions.Button(
-    style=interactions.ButtonStyle.SECONDARY,
-    label="Список участников",
-    custom_id="participate_event_check",
-)
-
-button_participate_event_check_team= interactions.Button(
-    style=interactions.ButtonStyle.SECONDARY,
-    label="Список Команд",
-    custom_id="participate_event_check_team",
-)
-
-button_leave_event= interactions.Button(
-    style=interactions.ButtonStyle.SECONDARY,
-    label="Уйти",
-    custom_id="leave_event",
-)
-
-button_leave_event_disabled= interactions.Button(
-    style=interactions.ButtonStyle.SECONDARY,
-    label="Уйти",
-    custom_id="leave_event_disabled",
-    disabled=True
-)
-
-button_start_event= interactions.Button(
-    style=interactions.ButtonStyle.SECONDARY,
-    label="Запустить",
-    custom_id="start_event",
-)
-
-button_end_event= interactions.Button(
-    style=interactions.ButtonStyle.SECONDARY,
-    label="Завершить",
-    custom_id="end_event",
-)
-button_end_event_disabled= interactions.Button(
-    style=interactions.ButtonStyle.SECONDARY,
-    label="Завершено",
-    custom_id="end_event_disabled",
-    disabled=True
-)
-
-
-row = interactions.ActionRow(
-    components=[button_participate_event, button_participate_event_check, button_leave_event, button_start_event]
-)
-row1 = interactions.ActionRow(
-    components=[button_participate_event_disabled, button_participate_event_check_team, button_leave_event_disabled, button_end_event]
-)
-row2 = interactions.ActionRow(
-    components=[button_participate_event_disabled, button_participate_event_check_team, button_leave_event_disabled, button_end_event_disabled]
-)
-
-
 @bot.command(
     name = 'startevent',
     description= '''Запустить новое событие.
@@ -613,7 +546,7 @@ async def startevent(ctx: interactions.CommandContext, event_type, event_name, e
 # Обработка кнопок события
 # Учавствовать
 @bot.component("participate_event")
-async def button_response(ctx: interactions.CommandContext):
+async def button_participate_event(ctx: interactions.CommandContext):
     try:
         # Получаем имеющиеся данные о пользователе по id
         argx = (int(ctx.user.id),)
@@ -624,6 +557,19 @@ async def button_response(ctx: interactions.CommandContext):
         if user == []:
             await ctx.send('Вы еще не зарегистрированы', ephemeral=True)
         else:
+            # Проверяем на изменение Discord имени
+            if ctx.author.name != user[0][10]:
+                # Полученные пареметры
+                argx = (int(ctx.user.id), ctx.author.name)
+                # Сейв в бд
+                res = execute_query('edit_user_discord_name', argx)
+                if isinstance(res, str):
+                    # Добавлять новые обнаруденые баги через if else
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
+                    # Логирование ошибки в базу
+                    argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'edit_user_discord_name', res)
+                    execute_query('add_error', argx)  
+                    print(res) 
             # Полученные пареметры
             argx = (int(ctx.message.id), int(ctx.user.id))
             # Сейв в бд
@@ -649,7 +595,7 @@ async def button_response(ctx: interactions.CommandContext):
 
 #Кто учавствует
 @bot.component("participate_event_check")
-async def button_response(ctx: interactions.CommandContext):
+async def button_check(ctx: interactions.CommandContext):
     try:
         # Получаем имеющиеся данные о пользователе по id
         argx = (int(ctx.user.id),)
@@ -694,7 +640,7 @@ async def button_response(ctx: interactions.CommandContext):
 
 # Уйти
 @bot.component("leave_event")
-async def button_response(ctx: interactions.CommandContext):
+async def button_leave(ctx: interactions.CommandContext):
     try:
         # Получаем имеющиеся данные о пользователе по id
         argx = (int(ctx.user.id),)
@@ -731,7 +677,7 @@ async def button_response(ctx: interactions.CommandContext):
 
 # Запустить
 @bot.component("start_event")
-async def button_response(ctx: interactions.CommandContext):
+async def button_start_event(ctx: interactions.CommandContext):
     try:
         # Провека прав мембера
         # Полюбому можно лучге но я не справился
@@ -828,7 +774,7 @@ async def button_response(ctx: interactions.CommandContext):
 
 # Завершить
 @bot.component("end_event")
-async def button_response(ctx: interactions.CommandContext):
+async def button_end_event(ctx: interactions.CommandContext):
     try:
         # Провека прав мембера
         # Полюбому можно лучге но я не справился
@@ -895,7 +841,7 @@ async def button_response(ctx: interactions.CommandContext):
 
 # Список команд
 @bot.component("participate_event_check_team")
-async def button_response(ctx: interactions.CommandContext):
+async def button_check_team(ctx: interactions.CommandContext):
     try:
         # Получаем имеющиеся данные о пользователе по id
         argx = (int(ctx.user.id),)
@@ -930,7 +876,7 @@ async def button_response(ctx: interactions.CommandContext):
                 embed = users_to_event_team_message(user_to_event, permissions_administrator)
                 await ctx.send(embeds=embed, ephemeral=True)
     except IndexError:
-        await ctx.send('Нет участников. Стань первым))', ephemeral=True)
+        await ctx.send('К сожалению на этом турнире нет участников)', ephemeral=True)
     except Exception as ex:
         await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
@@ -949,6 +895,108 @@ async def button_response(ctx: interactions.CommandContext):
 async def check_channel(ctx: interactions.CommandContext):
     
     await ctx.send(str(ctx.channel_id))
+
+
+@bot.command(
+    name = 'add_member_role',
+    description= 'Админская команда для выдачи всем участникам зареганым в боте роли',
+    default_member_permissions= interactions.Permissions.ADMINISTRATOR
+
+)
+async def add_member_role(ctx: interactions.CommandContext):
+    # Получаем users
+    res = execute_query('all_users')
+    for userss in res:
+        users = userss.fetchall()
+    i = 1
+    for user in users:
+        try:
+            # ЭТО ЛЕГЕНТААААААААААА
+            member = interactions.Member(**await bot._http.get_member(member_id=int(user[0]), guild_id=663569174831824948), _client=bot._http)
+            # ЭТО ЛЕГЕНТААААААААААА
+            await member.add_role(bot_info.role_id, ctx.guild_id)
+            await ctx.send(f'{i} {user[1]} присвоена роль', ephemeral=True)
+        except:
+            await ctx.send(f'{i} {user[1]} не найден', ephemeral=True)
+        sleep(2)
+        i+=1
+    await ctx.send('Мы закончили ))', ephemeral=True)
+
+    await ctx.send(member.id, ephemeral=True)
+    # for user in users:
+    #     await ctx.send(f'{i} {user[0]}', ephemeral=True)
+    #     sleep(1)
+    #     i+=1
+    interactions.api.http.member.MemberRequest
+    interactions.Member
+
+# Кнокпи для события
+button_participate_event = interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,
+    label="Участвовать",
+    custom_id="participate_event",
+)
+
+button_participate_event_disabled= interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,
+    label="Участвовать",
+    custom_id="participate_event_disabled",
+    disabled=True
+)
+
+button_participate_event_check= interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,
+    label="Список участников",
+    custom_id="participate_event_check",
+)
+
+button_participate_event_check_team= interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,
+    label="Список Команд",
+    custom_id="participate_event_check_team",
+)
+
+button_leave_event= interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,
+    label="Уйти",
+    custom_id="leave_event",
+)
+
+button_leave_event_disabled= interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,
+    label="Уйти",
+    custom_id="leave_event_disabled",
+    disabled=True
+)
+
+button_start_event= interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,
+    label="Запустить",
+    custom_id="start_event",
+)
+
+button_end_event= interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,
+    label="Завершить",
+    custom_id="end_event",
+)
+button_end_event_disabled= interactions.Button(
+    style=interactions.ButtonStyle.SECONDARY,
+    label="Завершено",
+    custom_id="end_event_disabled",
+    disabled=True
+)
+
+
+row = interactions.ActionRow(
+    components=[button_participate_event, button_participate_event_check, button_leave_event, button_start_event]
+)
+row1 = interactions.ActionRow(
+    components=[button_participate_event_disabled, button_participate_event_check_team, button_leave_event_disabled, button_end_event]
+)
+row2 = interactions.ActionRow(
+    components=[button_participate_event_disabled, button_participate_event_check_team, button_leave_event_disabled, button_end_event_disabled]
+)
 
 if __name__ == '__main__':
     bot.start()

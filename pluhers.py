@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import interactions
 
 def check_role(role_1, role_2, role_3, role_4, role_5):
     flag_top = 0
@@ -22,3 +23,6 @@ def check_role(role_1, role_2, role_3, role_4, role_5):
         return 1
     else:
         return 0
+
+def add_member_role():
+    return 0
