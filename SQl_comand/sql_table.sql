@@ -13,7 +13,7 @@ CREATE TABLE users
     discord_name varchar(100) not null
     
 );
--- status: 1 - запущен Идет регистрация 2-  Регистрация закончена начинаются игры 0 - Событие завершено
+-- status: 1 - запущен Идет регистрация 2-  Регистрация закончена начинаются игры 0 - Событие завершено 4 - проверка пользователей в канаде перед началом
 CREATE TABLE events
 (
 	id bigint primary key,
@@ -22,7 +22,13 @@ CREATE TABLE events
     type varchar(20),
     event_name varchar(100),
     event_description varchar(5000),
-    status int
+    status int,
+    id_event_role bigint,
+    id_event_text_channel bigint,
+    id_event_voice_channel bigint,
+    id_event_category_channel bigint,
+    id_role_team_arr varchar(5000),
+    id_channel_team_arr varchar(5000)
     
 );
 

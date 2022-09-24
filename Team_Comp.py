@@ -5,15 +5,17 @@ import time
 import copy
 
 from bd_connection import execute_query
+# 2 бот 
+from discordpy import check_memeber_voice
 
-def team_comp_def(user_to_event):
+def team_comp_def(user_to_event, missing_memeber):
     # fh = open(db_name, 'r', encoding='utf-8')  # Заменить на db_name
     # DataBase = json.load(fh)
     # fh.close()
     # Запихиваем данные в dict
     DataBase = {}
     for user in user_to_event:
-        DataBase[user[1]] = [user[7], user[8], [user[10],user[11],user[12],user[13],user[14]], user[1]]
+        DataBase[user[0]] = [user[2], user[3], [user[4],user[5],user[6],user[7],user[8]], user[0]]
     # Определяем количесво команд
     print(DataBase)
     Comand = len(DataBase) // 10
@@ -23,14 +25,37 @@ def team_comp_def(user_to_event):
     print(f'Участноков в запасе: {Zapas}')
     Zapas_Name = []
     Base = DataBase.copy()
-
-    # Найдем невезучих запасников
-    for i in range(Zapas):
-        k = random.choice(list(Base.keys()))
-        name = Base[k]
-        print(f'Игрок {name[0]} с ключем {k}  и ролью {name[2][0]} отпраляется в запас.')
-        Zapas_Name.append([k, name])
-        del Base[k]
+    # Добавление в запас опоздавших игроков
+    # Если опоздавших БОЛЬШЕ чем нужно запасных
+    if len(missing_memeber) > Zapas:
+        for i in range(Zapas):
+            k = random.choice(list(missing_memeber))
+            name = Base[k]
+            print(f'Игрок {name[0]} с ключем {k}  и ролью {name[2][0]} отпраляется в запас.')
+            Zapas_Name.append([k, name])
+            del Base[k]
+    # Если опоздавших МЕНЬШЕ ИЛИ РАВНО чем нужно запасных
+    else:
+        for i in missing_memeber:
+            name = Base[i]
+            print(f'Игрок {name[0]} с ключем {i}  и ролью {name[2][0]} отпраляется в запас.')
+            Zapas_Name.append([i, name])
+            del Base[i]
+        others_count = Zapas - len(missing_memeber)
+        for i in range(others_count):
+            k = random.choice(list(Base.keys()))
+            name = Base[k]
+            print(f'Игрок {name[0]} с ключем {k}  и ролью {name[2][0]} отпраляется в запас.')
+            Zapas_Name.append([k, name])
+            del Base[k]
+        
+    # # Найдем невезучих запасников
+    # for i in range(Zapas):
+    #     k = random.choice(list(Base.keys()))
+    #     name = Base[k]
+    #     print(f'Игрок {name[0]} с ключем {k}  и ролью {name[2][0]} отпраляется в запас.')
+    #     Zapas_Name.append([k, name])
+    #     del Base[k]
 
 
     # Удалим их
@@ -186,7 +211,7 @@ def team_comp_def(user_to_event):
     print(Zapas_Name)
     print('Распределение')
     print(team_comp)
-    return(Zapas_Name, team_comp)
+    return(Zapas_Name, team_comp, Comand)
 
 def add_info_db(zapas_id, team_comps, id_event):
     db_er = False
@@ -205,14 +230,17 @@ def add_info_db(zapas_id, team_comps, id_event):
         if isinstance(res, str):
             db_er = res
             print(res)
-            return res
+            return res  
+
     if isinstance(db_er, str):
         return db_er
     return True
 
 
-def all_team_comp(user_to_event, permissions_administrator, id_event):
-    zapas_name, team_comps = team_comp_def(user_to_event)
+def all_team_comp(user_to_event, permissions_administrator, id_event, client):
+    # Запуск сторонего бота для провекри пользователей
+    missing_memeber = check_memeber_voice(user_to_event, client)
+    zapas_name, team_comps, comand_count = team_comp_def(user_to_event, missing_memeber)
     zapas_id = []
     for zapas in zapas_name:
         zapas_id.append(zapas[0])
@@ -226,4 +254,4 @@ def all_team_comp(user_to_event, permissions_administrator, id_event):
     res = add_info_db(zapas_id, player_list, id_event)
     if isinstance(res, str):
             return res
-    return
+    return comand_count

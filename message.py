@@ -48,7 +48,7 @@ def me_message(user_events):
                     inline=False,
                 )
             ]
-    if user_events[0][11] is None:
+    if user_events[0][10] is None:
         field1 = interactions.EmbedField(
                     name="Всего игр:",
                     value=f"0",
@@ -64,22 +64,22 @@ def me_message(user_events):
         event = ''
         for user_event in user_events:
             len += 1
-            if user_event[23] == 1: # регистрация
-                if user_event[24] < 0: # время прошло 
-                    event = event + f' **Событие** {user_event[21]} Проходит регистрация.\n Уже скоро начало будьте готовы\n\n'
+            if user_event[14] == 1: # регистрация
+                if user_event[15] < 0: # время прошло 
+                    event = event + f' **Событие** {user_event[11]} Проходит регистрация.\n Уже скоро начало будьте готовы\n\n'
                 else:
-                    day = user_event[24]//86400
-                    ost = user_event[24]%86400
+                    day = user_event[15]//86400
+                    ost = user_event[15]%86400
                     hour = ost//3600
                     ost = ost%3600
                     min = ost//60
                     sec = ost%60
-                    event = event + f' **Событие** {user_event[21]} Проходит регистрация.\nДо начала {day} день {hour} час {min} минут {sec} секунд\n\n'
-            elif user_event[23] == 2: # игра идет
-                if user_event[14] is None:
-                    event = event + f' **Событие** {user_event[21]} УЖЕ ИДЕТ.\n Вы в запасе.\n\n'
+                    event = event + f' **Событие** {user_event[11]} Проходит регистрация.\nДо начала {day} день {hour} час {min} минут {sec} секунд\n\n'
+            elif user_event[14] == 2: # игра идет
+                if user_event[15] is None:
+                    event = event + f' **Событие** {user_event[11]} УЖЕ ИДЕТ.\n Вы в запасе.\n\n'
                 else:
-                    event = event + f' **Событие** {user_event[21]} УЖЕ ИДЕТ.\n Ваша команда {user_event[14]}  роль {user_event[15]}.\n\n'
+                    event = event + f' **Событие** {user_event[11]} УЖЕ ИДЕТ.\n Ваша команда {user_event[12]}  роль {user_event[13]}.\n\n'
         if event == '':
             event = 'Вы не участвуете ни в одном событии'
         field1 = interactions.EmbedField(
@@ -98,7 +98,7 @@ def me_message(user_events):
     embed = interactions.Embed(
             color=0x344059,
             title=f"ME",
-            description=f"Инициатор Запроса: {user_events[0][10]}",
+            description=f"Инициатор Запроса: {user_events[0][9]}",
             footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации\nПишем ботов. По вопросам @Suglinca#6900"),
             fields=fields_embed
     )
@@ -107,7 +107,7 @@ def me_message(user_events):
 
 # Создание события
 def startevent_message(event_type, event_name, event_description, event_date_start):
-    date_time = event_date_start.split(' ')
+    date_time = str(event_date_start).split(' ')
     date = date_time[0]
     time = date_time[1]
     month = date.split('-')[2]
@@ -181,7 +181,7 @@ def startevent_end_message(event_type, event_name, event_description):
 
 # Список участников
 def users_to_event_message(user_to_event, admin= False):
-    event_name = user_to_event[0][21]
+    event_name = user_to_event[0][1]
     users_count = len(user_to_event)
     fields_embed = []
     users_block_count = 5
@@ -194,15 +194,15 @@ def users_to_event_message(user_to_event, admin= False):
         for j in range(users_block_count):
             if i +j < users_count:
                 if admin:
-                    val = val + f"**{user_to_event[i+j][7]}**   {user_to_event[i+j][8]}||{user_to_event[i+j][10]}/{user_to_event[i+j][11]}/{user_to_event[i+j][12]}/{user_to_event[i+j][13]}/{user_to_event[i+j][14]}||\n"
+                    val = val + f"**{user_to_event[i+j][2]}**   {user_to_event[i+j][3]}||{user_to_event[i+j][4]}/{user_to_event[i+j][5]}/{user_to_event[i+j][6]}/{user_to_event[i+j][7]}/{user_to_event[i+j][8]}||\n"
                 else:
-                    val = val + f"{user_to_event[i+j][7]}\n"
+                    val = val + f"{user_to_event[i+j][2]}\n"
         field.value = val
         fields_embed.append(field)
 
     embed = interactions.Embed(
             color=0x1100fa,
-            title=f"Список участников в событии(Не является распределением по командам, оно будет позже) {event_name}",
+            title=f"Список участников в событии {event_name} (Не является распределением по командам, оно будет позже)",
             description=f"На данный момент участников: {users_count}",
             footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации.\nСписок может быть не полным если количество участников больше 125.\nПишем ботов. По вопросам @Suglinca#6900"),
             fields=fields_embed,
@@ -212,7 +212,7 @@ def users_to_event_message(user_to_event, admin= False):
 
 # Список команд
 def users_to_event_team_message(user_to_event, admin= False):
-    event_name = user_to_event[0][21]
+    event_name = user_to_event[0][1]
     users_count = len(user_to_event)
     fields_embed = []
     users_team_start = 0
@@ -226,9 +226,9 @@ def users_to_event_team_message(user_to_event, admin= False):
 
     while user_to_event[users_team_start][3] is None:
         if admin:
-            val = val + f"**{user_to_event[users_team_start][7]}** {user_to_event[users_team_start][8]}({user_to_event[users_team_start][9]})\n"
+            val = val + f"**{user_to_event[users_team_start][2]}** {user_to_event[users_team_start][4]}({user_to_event[users_team_start][5]})\n"
         else:
-            val = val + f"{user_to_event[users_team_start][7]}\n"
+            val = val + f"{user_to_event[users_team_start][2]}\n"
         users_team_start += 1
         if users_team_start >= users_count:
             break
@@ -246,9 +246,9 @@ def users_to_event_team_message(user_to_event, admin= False):
         for j in range(users_block_count):
             if i +j < users_count:
                 if admin:
-                    val = val + f"**{user_to_event[i+j][7]}**   {user_to_event[i+j][8]}({user_to_event[i+j][9]}) {user_to_event[i+j][4]}\n"
+                    val = val + f"**{user_to_event[i+j][2]}**   {user_to_event[i+j][4]}({user_to_event[i+j][5]}) {user_to_event[i+j][6]}\n"
                 else:
-                    val = val + f"{user_to_event[i+j][7]} {user_to_event[i+j][4]}\n"
+                    val = val + f"{user_to_event[i+j][2]} {user_to_event[i+j][6]}\n"
         field.value = val
         fields_embed.append(field)
 

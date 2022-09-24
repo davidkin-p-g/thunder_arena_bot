@@ -114,14 +114,14 @@ END//
 
 DELIMITER //
 CREATE PROCEDURE add_event (id_event bigint, type varchar(20), event_name varchar(100), event_description varchar(5000),
- date_start datetime) 
+ date_start datetime, id_event_role bigint, id_event_text_channel bigint, id_event_voice_channel bigint, id_event_category_channel bigint) 
 LANGUAGE SQL 
 DETERMINISTIC 
 SQL SECURITY DEFINER 
 COMMENT 'Добавление нового события' 
 BEGIN 
-	INSERT events (id, date_add, date_start, type, event_name, event_description, status) 
-	VALUES (id_event, now(), date_start, type, event_name, event_description, 1);
+	INSERT events (id, date_add, date_start, type, event_name, event_description, status, id_event_role, id_event_text_channel, id_event_voice_channel, id_event_category_channel) 
+	VALUES (id_event, now(), date_start, type, event_name, event_description, 1, id_event_role, id_event_text_channel, id_event_voice_channel, id_event_category_channel);
 END//
 
 -- Проверка
@@ -290,4 +290,70 @@ DETERMINISTIC
 BEGIN 
 	INSERT INTO error_mes(id_user, channel, member, command, error) 
 	VALUES (id_user, channel, member, command, error);
+END//
+
+DELIMITER //
+CREATE PROCEDURE check_user_to_me_new (in id_user bigint) 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'информация о пользователе' 
+BEGIN 
+SELECT u.id, u.user_name, u.rating, u.rating_value, u.role_1, u.role_2, u.role_3, u.role_4, u.role_5, u.discord_name,
+e.id, e.event_name, team, role, status,
+(DATE(e.date_start)-DATE(now()))*86400  + (HOUR(e.date_start)-HOUR(now()))*3600 + (MINUTE(e.date_start)-MINUTE(now()))*60 + (SECOND(e.date_start) - SECOND(now())) as sec
+FROM users as u
+left JOIN event_to_users as eu on eu.id_user = u.id
+left JOIN events as e on eu.id_event = e.id
+WHERE u.id = 178963010751168512
+Order by e.status DESC, sec;
+END//
+
+DELIMITER //
+CREATE PROCEDURE all_user_to_event_new (id_ev bigint) 
+LANGUAGE SQL 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'Проверка всех регистрированных на событие пользователей' 
+BEGIN         
+SELECT u.id, e.event_name, u.user_name, u.rating, u.role_1, u.role_2, u.role_3, u.role_4, u.role_5, e.id_event_voice_channel
+FROM event_to_users as eu 
+JOIN users as u on eu.id_user = u.id
+JOIN events as e on eu.id_event = e.id
+WHERE id_event = id_ev;
+END//
+
+-- Проверка
+-- call all_user_to_event(1009281495585800274)
+
+
+DELIMITER //
+CREATE PROCEDURE all_user_to_event_team_new (id_ev bigint) 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'Проверка всех регистрированных на событие пользователей по командам' 
+BEGIN         
+SELECT u.id, e.event_name, u.user_name, team, u.rating, u.rating_value, role
+FROM event_to_users as eu 
+JOIN users as u on eu.id_user = u.id
+JOIN events as e on eu.id_event = e.id
+WHERE id_event = id_ev
+ORDER BY team;
+END//
+
+-- Проверка
+-- call all_user_to_event_team(1009310514985324627)
+
+DELIMITER //
+CREATE PROCEDURE add_arr_id_to_event (id_event bigint , id_role_team_arr varchar(5000), id_channel_team_arr varchar(5000)) 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'Изменение события' 
+BEGIN 
+	UPDATE events
+    SET id_role_team_arr = id_role_team_arr , id_channel_team_arr = id_channel_team_arr
+	WHERE id = id_event;
 END//
