@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from configparser import ConfigParser
+import bot_info
  
  
-def read_db_config(filename='config.ini', section='mysql'):
+def read_db_config(filename=f'{bot_info.config}', section='mysql'):
     # Парсим и читаем ini файл
     parser = ConfigParser()
     parser.read(filename)

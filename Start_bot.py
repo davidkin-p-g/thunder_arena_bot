@@ -6,7 +6,6 @@ from time import sleep
 import asyncio
 import interactions
 import discord
-from discord.ext import commands
 
 from bd_connection import execute_query
 from Team_Comp import all_team_comp
@@ -41,7 +40,6 @@ bot = interactions.Client(token=TOKEN)
 #discord py
 intents = discord.Intents.default()
 client = discord.Client(intents=intents)
-dpy = commands.Bot(command_prefix="/")
 # Кнопки меню участников
 
 # Команда Регистрации нового пользователя
@@ -769,7 +767,8 @@ async def button_start_dm_mess(ctx: interactions.CommandContext):
             return
         # Полученные пареметры
         event_type, event_name, event_description, event_date_start = event[0][3], event[0][4], event[0][5], event[0][2]
-        message = startevent_message(event_type, event_name, event_description, event_date_start)
+        dm_flag = 1
+        message = startevent_message(event_type, event_name, event_description, event_date_start, dm_flag)
 
         # Отправить рассыку
         # Полученные пареметры
@@ -1029,20 +1028,19 @@ async def button_end_event(ctx: interactions.CommandContext):
             id_event_category_channel = event[0][10]
             id_role_team_arr = event[0][11].split('|')
             id_channel_team_arr = event[0][12].split('|')
-            
-            # Удаление
-            await guild.delete_role(int(id_event_role))
-            await guild.delete_channel(int(id_event_text_channel))
-            await guild.delete_channel(int(id_event_voice_channel))
-            await guild.delete_channel(int(id_event_category_channel))
 
             # Для командных
             for role in id_role_team_arr:
                 if role != '':
                     await guild.delete_role(int(role))
             for channel in id_channel_team_arr:
-                if role != '':
+                if channel != '':
                     await guild.delete_channel(int(channel))
+            # Удаление
+            await guild.delete_role(int(id_event_role))
+            await guild.delete_channel(int(id_event_text_channel))
+            await guild.delete_channel(int(id_event_voice_channel))
+            await guild.delete_channel(int(id_event_category_channel))
 
             type, event_name, event_description = event[0][3], event[0][4], event[0][5]
             embed = startevent_end_message(type, event_name, event_description)

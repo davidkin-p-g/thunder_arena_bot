@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from dataclasses import fields
 import interactions
 from bot_info import Url_thunder_bot_image
 
@@ -106,7 +107,7 @@ def me_message(user_events):
     return message
 
 # Создание события
-def startevent_message(event_type, event_name, event_description, event_date_start):
+def startevent_message(event_type, event_name, event_description, event_date_start, dm_flag=0):
     date_time = str(event_date_start).split(' ')
     date = date_time[0]
     time = date_time[1]
@@ -114,19 +115,34 @@ def startevent_message(event_type, event_name, event_description, event_date_sta
     day = date.split('-')[1]
     hour = time.split(':')[0]
     minute = time.split(':')[1]
-    embed = interactions.Embed(
-            thumbnail=interactions.EmbedImageStruct(url=Url_thunder_bot_image),
-            color=0x344059,
-            title=f"Событие {event_type} {event_name}",
-            description=f"{event_description}",
-            footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации\nПишем ботов. По вопросам @Suglinca#6900"),
-            fields=[
+    if dm_flag == 0:
+        field = fields=[
                 interactions.EmbedField(
                 name="Время начала",
                 value=f"{month}.{day}/{hour}:{minute}",
                 inline=True,
                 )
-            ],
+            ]
+    else:
+        field = [
+                interactions.EmbedField(
+                name="Проверка на готовность",
+                value="На данные момент обьявлена проверка на готовность. Всем учасникам необходимо собраться в голсовом канале события",
+                inline=True,
+                ),
+                interactions.EmbedField(
+                name="Время начала",
+                value=f"{month}.{day}/{hour}:{minute}",
+                inline=True,
+                ),
+            ]
+    embed = interactions.Embed(
+            thumbnail=interactions.EmbedImageStruct(url=Url_thunder_bot_image),
+            color=0x344059,
+            title=f"Событие {event_type} {event_name}", #Проверка на готовность всем учасникам собраться в голосовом канале события
+            description=f"{event_description}",
+            footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации\nПишем ботов. По вопросам @Suglinca#6900"),
+            fields=field
     )
     message = embed
     return message
