@@ -17,12 +17,12 @@ def team_comp_def(user_to_event, missing_memeber):
     for user in user_to_event:
         DataBase[user[0]] = [user[2], user[3], [user[4],user[5],user[6],user[7],user[8]], user[0]]
     # Определяем количесво команд
-    print(DataBase)
+    #print(DataBase)
     Comand = len(DataBase) // 10
     Comand = Comand * 2
     Zapas = len(DataBase) % 10
-    print(f'Количесво команд: {Comand}')
-    print(f'Участноков в запасе: {Zapas}')
+    #print(f'Количесво команд: {Comand}')
+    #print(f'Участноков в запасе: {Zapas}')
     Zapas_Name = []
     Base = DataBase.copy()
     # Добавление в запас опоздавших игроков
@@ -31,21 +31,21 @@ def team_comp_def(user_to_event, missing_memeber):
         for i in range(Zapas):
             k = random.choice(list(missing_memeber))
             name = Base[k]
-            print(f'Игрок {name[0]} с ключем {k}  и ролью {name[2][0]} отпраляется в запас.')
+            #print(f'Игрок {name[0]} с ключем {k}  и ролью {name[2][0]} отпраляется в запас.')
             Zapas_Name.append([k, name])
             del Base[k]
     # Если опоздавших МЕНЬШЕ ИЛИ РАВНО чем нужно запасных
     else:
         for i in missing_memeber:
             name = Base[i]
-            print(f'Игрок {name[0]} с ключем {i}  и ролью {name[2][0]} отпраляется в запас.')
+            #print(f'Игрок {name[0]} с ключем {i}  и ролью {name[2][0]} отпраляется в запас.')
             Zapas_Name.append([i, name])
             del Base[i]
         others_count = Zapas - len(missing_memeber)
         for i in range(others_count):
             k = random.choice(list(Base.keys()))
             name = Base[k]
-            print(f'Игрок {name[0]} с ключем {k}  и ролью {name[2][0]} отпраляется в запас.')
+            #print(f'Игрок {name[0]} с ключем {k}  и ролью {name[2][0]} отпраляется в запас.')
             Zapas_Name.append([k, name])
             del Base[k]
         
@@ -71,7 +71,7 @@ def team_comp_def(user_to_event, missing_memeber):
     # Разкидаем участников ао коробкам
     Korobki = [[[] for j in range(5)] for i in range(5)]
     k = 0
-    print(Base)
+    #print(Base)
     for key, value in Base.items():
         j = 0
         for i in value[2]:
@@ -114,7 +114,7 @@ def team_comp_def(user_to_event, missing_memeber):
                                 x.remove(c)
             i += 1
 
-    print(role_comp)
+    #print(role_comp)
     # Определяем числовой коэффициент ранга
     Role_strong = {
         'Железо': 0,
@@ -139,18 +139,18 @@ def team_comp_def(user_to_event, missing_memeber):
 
     # for key, i in role_comp.items():
     #     print(key, i)
-    print('Средний рейтинг игрока:')
-    if Comand != 0:
-        # print(Comand)
-        print(reiting_player / (Comand * 5))
-    else:
-        print("Команд не собрано")
+    #print('Средний рейтинг игрока:')
+    # if Comand != 0:
+    #     # print(Comand)
+    #     print(reiting_player / (Comand * 5))
+    # else:
+    #     print("Команд не собрано")
 
-    print('Средний рейтинг команды:')
-    if Comand != 0:
-        print(reiting_player / Comand)
-    else:
-        print("Команд не собрано")
+    # print('Средний рейтинг команды:')
+    # if Comand != 0:
+    #     print(reiting_player / Comand)
+    # else:
+    #     print("Команд не собрано")
 
     if Comand != 0:
         Sr_reit_team = reiting_player / Comand
@@ -191,7 +191,7 @@ def team_comp_def(user_to_event, missing_memeber):
             # Записываю команду
             if flag:
                 team_comp[f'Команда {team_name}'] = [top, mid, bot, les, sup]
-                print(f'Команда {team_name} - {reit} сформирована')
+                #print(f'Команда {team_name} - {reit} сформирована')
                 team_name += 1
                 # Удаляю участников и пула
                 # for i in role_comp['Топ']:
@@ -207,9 +207,9 @@ def team_comp_def(user_to_event, missing_memeber):
                 print(1)
                 break
 
-    print("Запас")
+    print("Zapas")
     print(Zapas_Name)
-    print('Распределение')
+    print('Raspredelene')
     print(team_comp)
     return(Zapas_Name, team_comp, Comand)
 
@@ -221,7 +221,7 @@ def add_info_db(zapas_id, team_comps, id_event):
         # Провека на ответ базы
         if isinstance(res, str):
             db_er = res
-            print(res)
+            #print(res)
             return res
     for user_id, value in team_comps.items():
         argx = (user_id, id_event, value[0], value[1])
@@ -229,7 +229,7 @@ def add_info_db(zapas_id, team_comps, id_event):
         # Провека на ответ базы
         if isinstance(res, str):
             db_er = res
-            print(res)
+            #print(res)
             return res  
 
     if isinstance(db_er, str):
@@ -248,8 +248,8 @@ def all_team_comp(user_to_event, permissions_administrator, id_event, client):
     for team, users_team in team_comps.items():
         for user in users_team:
             player_list[user[3]] = [team, user[4]]
-    print(f'Запас\n{zapas_id}')
-    print(f'Участники\n{player_list}')
+    print(f'zapas\n{zapas_id}')
+    print(f'ychasniki\n{player_list}')
 
     res = add_info_db(zapas_id, player_list, id_event)
     if isinstance(res, str):
