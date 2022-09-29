@@ -1229,7 +1229,7 @@ if __name__ == '__main__':
     loop = asyncio.get_event_loop()
 
     # асинхронно запущенные таски кажеться ))
-    task2 = loop.create_task(client.start(bot_info.TOKEN, bot=True))
+    task2 = loop.create_task(client.start(bot_info.TOKEN))
     task1 = loop.create_task(bot._ready())
     
     
