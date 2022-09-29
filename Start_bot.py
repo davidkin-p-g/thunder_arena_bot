@@ -464,7 +464,7 @@ async def me(ctx: interactions.CommandContext):
                 # Логирование ошибки в базу
                 argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'me', users)
                 execute_query('add_error', argx)  
-                print(users)
+                # print(users)
                 return
             for user_iterator in users:
                 user = user_iterator.fetchall()

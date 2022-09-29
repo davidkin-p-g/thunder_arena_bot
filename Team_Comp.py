@@ -207,10 +207,10 @@ def team_comp_def(user_to_event, missing_memeber):
                 print(1)
                 break
 
-    print("Zapas")
-    print(Zapas_Name)
-    print('Raspredelene')
-    print(team_comp)
+    # print("Zapas")
+    # print(Zapas_Name)
+    # print('Raspredelene')
+    # print(team_comp)
     return(Zapas_Name, team_comp, Comand)
 
 def add_info_db(zapas_id, team_comps, id_event):
@@ -248,8 +248,8 @@ def all_team_comp(user_to_event, permissions_administrator, id_event, client):
     for team, users_team in team_comps.items():
         for user in users_team:
             player_list[user[3]] = [team, user[4]]
-    print(f'zapas\n{zapas_id}')
-    print(f'ychasniki\n{player_list}')
+    # print(f'zapas\n{zapas_id}')
+    # print(f'ychasniki\n{player_list}')
 
     res = add_info_db(zapas_id, player_list, id_event)
     if isinstance(res, str):
