@@ -835,13 +835,13 @@ async def button_start_event(ctx: interactions.CommandContext):
             execute_query('add_error', argx)  
             print(res)
             return
-        # Проверка статуса события
-        if event[0][6] == 0:
-             await ctx.send('Событие уже закончилось', ephemeral=True)
-             return
-        if event[0][6] == 2:
-             await ctx.send('Событие уже запущено', ephemeral=True)
-             return
+        # # Проверка статуса события
+        # if event[0][6] == 0:
+        #      await ctx.send('Событие уже закончилось', ephemeral=True)
+        #      return
+        # if event[0][6] == 2:
+        #      await ctx.send('Событие уже запущено', ephemeral=True)
+        #      return
         # Изменяем статус события
         # Полученные пареметры
         id_event, date_start, type, event_name, status = int(ctx.message.id), event[0][2], event[0][3], event[0][4], 2
