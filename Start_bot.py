@@ -789,7 +789,7 @@ async def button_start_dm_mess(ctx: interactions.CommandContext):
         # Отправляем личное сообщение каждому пользователю в личку
         for user in user_to_event:
             member = interactions.Member(**await bot._http.get_member(member_id=int(user[0]), guild_id=int(ctx.guild_id)), _client=bot._http)
-            await member.send(f'Началась провека готовности участников в событии {user[1]}. \nПожалуйста зайдите в голосовай канал события для проверки. \nПредупреждение: В случае вашего отсутвия в канале вероятность отправиться в запас увеличиться.')
+            await member.send(f'Началась провека готовности участников в событии {user[1]}. \nПожалуйста, зайдите в голосовой канал события для проверки. \nПредупреждение: В случае вашего отсутствия в канале, вероятность отправиться в запас увеличится.')
 
         await ctx.message.edit(embeds=message, components=row0_5)
     except Exception as ex:
