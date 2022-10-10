@@ -177,11 +177,11 @@ async def registration_new(ctx, user_name, role_1, role_2, role_3, role_4, role_
                         await ctx.send('Вы уже зарегистрированы', ephemeral=True)
                     # Добавлять новые обнаруденые баги
                     else:
-                        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                         # Логирование ошибки в базу
                         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'registration', res)
                         execute_query('add_error', argx)
-                        print(res)      
+                        print(res)
+                        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)      
                 else:
                     # Выдадим роль Учатника
                     await ctx.author.add_role(bot_info.role_id, ctx.guild_id)
@@ -191,11 +191,11 @@ async def registration_new(ctx, user_name, role_1, role_2, role_3, role_4, role_
         else:
             await ctx.send('В этом канале нельзя произвести регистрацию', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'registration', str(ex))
         execute_query('add_error', argx)
         print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 
 # Команда изменения Ника пользователя
@@ -213,6 +213,7 @@ async def registration_new(ctx, user_name, role_1, role_2, role_3, role_4, role_
 )
 async def rename(ctx: interactions.CommandContext, user_name):
     try:
+        raise RuntimeError('Искобчение')
         # Проверка на канал использования
         if ctx.channel_id != bot_info.Event_server_id:
             # Получаем имеющиеся данные о пользователе по id
@@ -232,11 +233,11 @@ async def rename(ctx: interactions.CommandContext, user_name):
                 res = execute_query('edit_user', argx)
                 if isinstance(res, str):
                     # Добавлять новые обнаруденые баги через if else
-                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     # Логирование ошибки в базу
                     argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'rename', res)
                     execute_query('add_error', argx)  
                     print(res)      
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 else:
                     # Компановка сообщения
                     message = change_message(ctx.author, user_name, rating,  role_1, role_2, role_3, role_4, role_5, 'UserName изменено')
@@ -244,11 +245,11 @@ async def rename(ctx: interactions.CommandContext, user_name):
         else:
             await ctx.send('В этом канале нельзя произвести изменение имени', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'rename', str(ex))
-        execute_query('add_error', argx)
-        print(ex)
+        re = execute_query('add_error', argx)
+        print(ex, re)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 # Команда изменения Рейтинга пользователя
 @bot.command(
@@ -313,11 +314,11 @@ async def rerating(ctx: interactions.CommandContext, rating):
                 res = execute_query('edit_user', argx)
                 if isinstance(res, str):
                     # Добавлять новые обнаруденые баги через if else
-                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     # Логирование ошибки в базу
                     argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'rerating', res)
                     execute_query('add_error', argx)  
                     print(res)      
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 else:
                     # Компановка сообщения
                     message = change_message(ctx.author, user_name, rating,  role_1, role_2, role_3, role_4, role_5, 'Рейтинг Изменен')
@@ -325,11 +326,11 @@ async def rerating(ctx: interactions.CommandContext, rating):
         else:
             await ctx.send('В этом канале нельзя произвести изменение рейтинга', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'rerating', str(ex))
         execute_query('add_error', argx)
         print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 # Команда изменения Роли пользователя
 @bot.command(
@@ -427,11 +428,11 @@ async def rerole(ctx: interactions.CommandContext, role_1, role_2, role_3, role_
                     res = execute_query('edit_user', argx)
                     if isinstance(res, str):
                         # Добавлять новые обнаруденые баги через if else
-                        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                         # Логирование ошибки в базу
                         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'rerole', res)
                         execute_query('add_error', argx)  
-                        print(res)      
+                        print(res)
+                        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)   
                     else:
                         # Компановка сообщения
                         message = change_message(ctx.author, user_name, rating, role_1, role_2, role_3, role_4, role_5, 'Выбор ролей изменен')
@@ -439,11 +440,11 @@ async def rerole(ctx: interactions.CommandContext, role_1, role_2, role_3, role_
         else:
             await ctx.send('В этом канале нельзя произвести изменение ролей', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'rerole', str(ex))
         execute_query('add_error', argx)
         print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 #ME
 @bot.command(
@@ -460,11 +461,11 @@ async def me(ctx: interactions.CommandContext):
             # Обрабаотываем ошибку
             if isinstance(users, str):
                 # Добавлять новые обнаруденые баги через if else
-                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 # Логирование ошибки в базу
                 argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'me', users)
                 execute_query('add_error', argx)  
                 # print(users)
+                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 return
             for user_iterator in users:
                 user = user_iterator.fetchall()
@@ -478,11 +479,11 @@ async def me(ctx: interactions.CommandContext):
         else:
             await ctx.send('В этом канале нельзя использовать me', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'me', str(ex))
         execute_query('add_error', argx)
         print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 @bot.command(
     name = 'startevent',
@@ -556,19 +557,19 @@ async def startevent(ctx: interactions.CommandContext, event_type, event_name, e
             res = execute_query('add_event', argx)
             if isinstance(res, str):
                 # Добавлять новые обнаруденые баги через if else
-                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 # Логирование ошибки в базу
                 argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'startevent', res)
                 execute_query('add_error', argx)  
                 print(res)
+                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         else:
             await ctx.send('В этом канале нельзя запустить событие', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'startevent', str(ex))
         execute_query('add_error', argx)
         print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 # Обработка кнопок события
 # Учавствовать
@@ -592,11 +593,11 @@ async def button_participate_event(ctx: interactions.CommandContext):
                 res = execute_query('edit_user_discord_name', argx)
                 if isinstance(res, str):
                     # Добавлять новые обнаруденые баги через if else
-                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     # Логирование ошибки в базу
                     argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'edit_user_discord_name', res)
                     execute_query('add_error', argx)  
                     print(res) 
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
             # Полученные пареметры
             argx = (int(ctx.message.id), int(ctx.user.id))
             # Сейв в бд
@@ -607,21 +608,21 @@ async def button_participate_event(ctx: interactions.CommandContext):
                         await ctx.send('Вы уже зарегестрированы в этом событии', ephemeral=True)
                     # Добавлять новые обнаруденые баги
                 else:
-                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     # Логирование ошибки в базу
                     argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'participate_event', res)
                     execute_query('add_error', argx)    
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
             else:
                 # Узнаем название события
                 argx = (int(ctx.message.id),)
                 res = execute_query('check_event', argx)
                 if isinstance(res, str):
                     # Добавлять новые обнаруденые баги через if else
-                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     # Логирование ошибки в базу
                     argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event', res)
                     execute_query('add_error', argx)  
                     print(res)
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     return
                 # Вытаскиваем инфу о событии
                 for res_iterator in res:
@@ -629,11 +630,11 @@ async def button_participate_event(ctx: interactions.CommandContext):
                 await ctx.author.add_role(event[0][7], ctx.guild_id)
                 await ctx.send('Вы зарегистрировались на событие', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'participate_event', str(ex))
         execute_query('add_error', argx)
         print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 #Кто учавствует
 @bot.component("participate_event_check")
@@ -654,11 +655,11 @@ async def button_check(ctx: interactions.CommandContext):
             res = execute_query('all_user_to_event_new', argx)
             if isinstance(res, str):
                 # Добавлять новые обнаруденые баги через if else
-                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 # Логирование ошибки в базу
                 argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'participate_event_check', res)
                 execute_query('add_error', argx)  
-                print(res)      
+                print(res)
+                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
             else:
                 for user_to_events in res:
                     user_to_event = user_to_events.fetchall()
@@ -674,11 +675,11 @@ async def button_check(ctx: interactions.CommandContext):
     except IndexError:
         await ctx.send('Нет участников. Стань первым))', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'participate_event_check', str(ex))
         execute_query('add_error', argx)
         print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 # Уйти
 @bot.component("leave_event")
@@ -703,22 +704,22 @@ async def button_leave(ctx: interactions.CommandContext):
                         await ctx.send('Вы еще не зарегестрированы в этом событии', ephemeral=True)
                     # Добавлять новые обнаруденые баги
                 else:
-                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     # Логирование ошибки в базу
                     argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'leave_event', res)
                     execute_query('add_error', argx)  
-                    print(res)      
+                    print(res)
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)  
             else:
                 # Узнаем название события
                 argx = (int(ctx.message.id),)
                 res = execute_query('check_event', argx)
                 if isinstance(res, str):
                     # Добавлять новые обнаруденые баги через if else
-                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     # Логирование ошибки в базу
                     argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event', res)
                     execute_query('add_error', argx)  
                     print(res)
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     return
                 # Вытаскиваем инфу о событии
                 for res_iterator in res:
@@ -726,11 +727,11 @@ async def button_leave(ctx: interactions.CommandContext):
                 await ctx.author.remove_role(event[0][7], ctx.guild_id)
                 await ctx.send('Вы больше не зарегистрированы в этом событии', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'leave_event', str(ex))
         execute_query('add_error', argx)
-        print(ex)    
+        print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 # Запустить
 @bot.component("start_dm_mess")
 async def button_start_dm_mess(ctx: interactions.CommandContext):
@@ -749,21 +750,21 @@ async def button_start_dm_mess(ctx: interactions.CommandContext):
         # Проверка на бдшную ошибку
         if isinstance(res, str):
                 # Добавлять новые обнаруденые баги через if else
-                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 # Логирование ошибки в базу
                 argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_dm_mess', res)
                 execute_query('add_error', argx)  
                 print(res)
+                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 return
         # Вытаскиваем инфу о событии
         for res_iterator in res:
             event = res_iterator.fetchall()
         if event == []:
-            await ctx.send('Такого События не сушествует(что невозможно, как это вообще произошло ?? Кому то придеться работать ))', ephemeral=True)
             # Логирование ошибки в базу
             argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_dm_mess', 'Несуществующий эвент')
             execute_query('add_error', argx)  
             print(res)
+            await ctx.send('Такого События не сушествует(что невозможно, как это вообще произошло ?? Кому то придеться работать ))', ephemeral=True)
             return
         # Полученные пареметры
         event_type, event_name, event_description, event_date_start = event[0][3], event[0][4], event[0][5], event[0][2]
@@ -777,11 +778,11 @@ async def button_start_dm_mess(ctx: interactions.CommandContext):
         res = execute_query('all_user_to_event_new', argx)
         if isinstance(res, str):
             # Добавлять новые обнаруденые баги через if else
-            await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
             # Логирование ошибки в базу
             argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'participate_event_check', res)
             execute_query('add_error', argx)  
             print(res)
+            await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
             return
           
         for user_to_events in res:
@@ -793,11 +794,11 @@ async def button_start_dm_mess(ctx: interactions.CommandContext):
 
         await ctx.message.edit(embeds=message, components=row0_5)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event', str(ex))
         execute_query('add_error', argx)
-        print(ex)   
+        print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 # Запустить
 @bot.component("start_event")
@@ -819,21 +820,21 @@ async def button_start_event(ctx: interactions.CommandContext):
         # Проверка на бдшную ошибку
         if isinstance(res, str):
                 # Добавлять новые обнаруденые баги через if else
-                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 # Логирование ошибки в базу
                 argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event', res)
                 execute_query('add_error', argx)  
                 print(res)
+                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 return
         # Вытаскиваем инфу о событии
         for res_iterator in res:
             event = res_iterator.fetchall()
         if event == []:
-            await ctx.send('Такого События не сушествует(что невозможно, как это вообще произошло ?? Кому то придеться работать ))', ephemeral=True)
             # Логирование ошибки в базу
             argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event', 'Несуществующий эвент')
             execute_query('add_error', argx)  
             print(res)
+            await ctx.send('Такого События не сушествует(что невозможно, как это вообще произошло ?? Кому то придеться работать ))', ephemeral=True)
             return
         # # Проверка статуса события
         # if event[0][6] == 0:
@@ -850,11 +851,11 @@ async def button_start_event(ctx: interactions.CommandContext):
         res = execute_query('edit_event', argx)
         if isinstance(res, str):
             # Добавлять новые обнаруденые баги через if else
-            await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
             # Логирование ошибки в базу
             argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event', res)
             execute_query('add_error', argx)  
-            print(res)      
+            print(res)
+            await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         else:
             # Полученные пареметры
             argx = (int(ctx.message.id),)
@@ -862,11 +863,11 @@ async def button_start_event(ctx: interactions.CommandContext):
             res = execute_query('all_user_to_event_new', argx)
             if isinstance(res, str):
                 # Добавлять новые обнаруденые баги через if else
-                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 # Логирование ошибки в базу
                 argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event', res)
                 execute_query('add_error', argx)  
-                print(res)      
+                print(res)
+                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)    
             else:
                 for user_to_events in res:
                     user_to_event = user_to_events.fetchall()
@@ -883,11 +884,11 @@ async def button_start_event(ctx: interactions.CommandContext):
                 # /Формирование команд 
                 if isinstance(res, str):
                     # Добавлять новые обнаруденые баги через if else
-                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     # Логирование ошибки в базу
                     argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event', res)
                     execute_query('add_error', argx)  
                     print(res)
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     return
                 # Получаем всех участников
                 # Полученные пареметры
@@ -896,11 +897,11 @@ async def button_start_event(ctx: interactions.CommandContext):
                 res = execute_query('all_user_to_event_team_new', argx)
                 if isinstance(res, str):
                     # Добавлять новые обнаруденые баги через if else
-                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                     # Логирование ошибки в базу
                     argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'participate_event_check', res)
                     execute_query('add_error', argx)  
-                    print(res)      
+                    print(res)
+                    await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 else:
                     for user_to_events in res:
                         user_to_event = user_to_events.fetchall()
@@ -929,7 +930,7 @@ async def button_start_event(ctx: interactions.CommandContext):
                     voice_channel = await ctx.guild.create_channel(name=name, type=interactions.ChannelType(2), permission_overwrites=permission,parent_id=int(category_id))
                     # Для записи в бд
                     id_channel_team_arr = id_channel_team_arr + f'{int(text_channel.id)}|' + f'{int(voice_channel.id)}|'
-                    id_role_team_arr = id_role_team_arr = f'{int(role.id)}|'
+                    id_role_team_arr = id_role_team_arr + f'{int(role.id)}|'
                     # присвоим игрокам соответствующие роли
                     for user in user_to_event:
                         if user[3] == f'Команда {channel}':
@@ -944,11 +945,11 @@ async def button_start_event(ctx: interactions.CommandContext):
                     res = execute_query('add_arr_id_to_event', argx)
                     if isinstance(res, str):
                         # Добавлять новые обнаруденые баги через if else
-                        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                         # Логирование ошибки в базу
                         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event загрузка всех id каналов в бд', res)
                         execute_query('add_error', argx)  
                         print(res)
+                        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                         return
                 # Генерим сообщение
                 type, event_name, event_description = event[0][3], event[0][4], event[0][5]
@@ -981,29 +982,29 @@ async def button_end_event(ctx: interactions.CommandContext):
         # Проверка на бдшную ошибку
         if isinstance(res, str):
                 # Добавлять новые обнаруденые баги через if else
-                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 # Логирование ошибки в базу
                 argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'end_event', res)
                 execute_query('add_error', argx)  
                 print(res)
+                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 return
         # Вытаскиваем инфу о событии
         for res_iterator in res:
             event = res_iterator.fetchall()
         if event == []:
-            await ctx.send('Такого События не сушествует(что невозможно, как это вообще произошло ?? Кому то придеться работать ))', ephemeral=True)
             # Логирование ошибки в базу
             argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'end_event', 'Несуществующий эвент')
             execute_query('add_error', argx)  
             print(res)
+            await ctx.send('Такого События не сушествует(что невозможно, как это вообще произошло ?? Кому то придеться работать ))', ephemeral=True)
             return
         # Проверка статуса события
-        if event[0][6] == 0:
-             await ctx.send('Событие уже закончилось', ephemeral=True)
-             return
-        if event[0][6] == 1:
-             await ctx.send('Событие еще не началось', ephemeral=True)
-             return
+        # if event[0][6] == 0:
+        #      await ctx.send('Событие уже закончилось', ephemeral=True)
+        #      return
+        # if event[0][6] == 1:
+        #      await ctx.send('Событие еще не началось', ephemeral=True)
+        #      return
         # Изменяем статус события
         # Полученные пареметры
         id_event, date_start, type, event_name, status = int(ctx.message.id), event[0][2], event[0][3], event[0][4], 0
@@ -1012,11 +1013,11 @@ async def button_end_event(ctx: interactions.CommandContext):
         res = execute_query('edit_event', argx)
         if isinstance(res, str):
             # Добавлять новые обнаруденые баги через if else
-            await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
             # Логирование ошибки в базу
             argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'end_event', res)
             execute_query('add_error', argx)  
-            print(res)      
+            print(res)
+            await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         else:
             # Удалем все созданные роли и каналы
             # получаем guild
@@ -1030,27 +1031,33 @@ async def button_end_event(ctx: interactions.CommandContext):
             id_channel_team_arr = event[0][12].split('|')
 
             # Для командных
-            for role in id_role_team_arr:
-                if role != '':
-                    await guild.delete_role(int(role))
-            for channel in id_channel_team_arr:
-                if channel != '':
-                    await guild.delete_channel(int(channel))
-            # Удаление
-            await guild.delete_role(int(id_event_role))
-            await guild.delete_channel(int(id_event_text_channel))
-            await guild.delete_channel(int(id_event_voice_channel))
-            await guild.delete_channel(int(id_event_category_channel))
+            try:
+                for role in id_role_team_arr:
+                    if role != '':
+                        await guild.delete_role(int(role))
+                for channel in id_channel_team_arr:
+                    if channel != '':
+                        await guild.delete_channel(int(channel))
+                # Удаление
+                await guild.delete_role(int(id_event_role))
+                await guild.delete_channel(int(id_event_text_channel))
+                await guild.delete_channel(int(id_event_voice_channel))
+                await guild.delete_channel(int(id_event_category_channel))
+            except:
+                await ctx.send('Вероятно не все роли и каналы были удалены проверьте', ephemeral=True)
+                type, event_name, event_description = event[0][3], event[0][4], event[0][5]
+                embed = startevent_end_message(type, event_name, event_description)
+                await ctx.message.edit(embeds=embed, components=row2)
 
             type, event_name, event_description = event[0][3], event[0][4], event[0][5]
             embed = startevent_end_message(type, event_name, event_description)
             await ctx.message.edit(embeds=embed, components=row2)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'end_event', str(ex))
         execute_query('add_error', argx)
         print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 
 # Список команд
 @bot.component("participate_event_check_team")
@@ -1071,11 +1078,11 @@ async def button_check_team(ctx: interactions.CommandContext):
             res = execute_query('all_user_to_event_team_new', argx)
             if isinstance(res, str):
                 # Добавлять новые обнаруденые баги через if else
-                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 # Логирование ошибки в базу
                 argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'participate_event_check', res)
                 execute_query('add_error', argx)  
-                print(res)      
+                print(res)
+                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)     
             else:
                 for user_to_events in res:
                     user_to_event = user_to_events.fetchall()
@@ -1091,11 +1098,11 @@ async def button_check_team(ctx: interactions.CommandContext):
     except IndexError:
         await ctx.send('К сожалению на этом турнире нет участников)', ephemeral=True)
     except Exception as ex:
-        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
         # Логирование ошибки в базу
         argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'participate_event_check', str(ex))
         execute_query('add_error', argx)
         print(ex)
+        await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
 #Админский блок сервисная часть
 
 # Баны пользователей может еще сколько игр сыграл
@@ -1234,5 +1241,5 @@ if __name__ == '__main__':
     
     
     # Кажеться обьединяет их и дает им работать одновременно
-    gathered = asyncio.gather(task1, task2, loop=loop)
+    gathered = asyncio.gather(task1, task2)
     loop.run_until_complete(gathered)

@@ -283,8 +283,7 @@ END//
 -- call all_user_to_event_team(1009310514985324627)
 
 DELIMITER //
-CREATE PROCEDURE add_error (in id_user bigint, in channel varchar(200), in member varchar(200),
-in command varchar(200),  in error varchar(200))
+CREATE PROCEDURE add_error (id_user bigint, channel varchar(200), member varchar(200), command varchar(200), error varchar(200))
 LANGUAGE SQL 
 DETERMINISTIC 
 BEGIN 
@@ -305,7 +304,7 @@ e.id, e.event_name, team, role, status,
 FROM users as u
 left JOIN event_to_users as eu on eu.id_user = u.id
 left JOIN events as e on eu.id_event = e.id
-WHERE u.id = 178963010751168512
+WHERE u.id = id_user
 Order by e.status DESC, sec;
 END//
 

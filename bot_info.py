@@ -6,8 +6,12 @@
 TOKEN = 'OTk3MzE2NzMzNDk0ODg2NDMw.GCjcCY.MMhs-Ll8OhNn_FPER19k5sqjchosmX9q5lLpoM'
 Url_thunder_bot_image = 'https://sun9-6.userapi.com/impg/VPL_ZewamRIpXzObdc6HkH9IrGqj1Qhwi4TFVA/tPz0kugQiQg.jpg?size=512x512&quality=95&sign=e28c07277daf159b451d0259091fb419&type=album'
 role_id = 1024764824594415726
-# Конфиг базы
+# # Конфиг базы
 config = 'config.ini'
+# Конфиг базы для работы с винды
+#config = 'config_c4_db_debag.ini'
+# Конфиг базы для работы с винды на своем базе
+# config = 'config_debag.ini'
 # Каналы для общей регистрации и проведения Событий
 Reg_server_id = 930458995427270657
 Event_server_id = 930459052906020896
@@ -22,6 +26,8 @@ everyone_id = 785864773887590420
 # role_id = 1020109545147727882
 # # Конфиг базы
 # config = 'config_debag.ini'
+# #Конфиг базы для бд на хоста
+# #config = 'config_c4_db_debag.ini'
 # Reg_server_id = 929829439158747156
 # Event_server_id = 930167181818343465
 # Admin_server_id = 930179006903484456
