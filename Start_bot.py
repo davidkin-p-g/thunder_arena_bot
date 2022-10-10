@@ -213,7 +213,6 @@ async def registration_new(ctx, user_name, role_1, role_2, role_3, role_4, role_
 )
 async def rename(ctx: interactions.CommandContext, user_name):
     try:
-        raise RuntimeError('Искобчение')
         # Проверка на канал использования
         if ctx.channel_id != bot_info.Event_server_id:
             # Получаем имеющиеся данные о пользователе по id
