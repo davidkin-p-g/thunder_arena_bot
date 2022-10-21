@@ -287,8 +287,8 @@ CREATE PROCEDURE add_error (id_user bigint, channel varchar(200), member varchar
 LANGUAGE SQL 
 DETERMINISTIC 
 BEGIN 
-	INSERT INTO error_mes(id_user, channel, member, command, error) 
-	VALUES (id_user, channel, member, command, error);
+	INSERT INTO error_mes(id_user, channel, member, command, error, date_ad) 
+	VALUES (id_user, channel, member, command, error, NOW());
 END//
 
 DELIMITER //

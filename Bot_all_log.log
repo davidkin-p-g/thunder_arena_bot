@@ -1,0 +1,98 @@
+2022-10-21 20:40:15,409
+INFO - Bot - Бот запущен
+2022-10-21 20:41:11,011
+INFO - BotComponentStart - rename - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 30 - Проверен пользователь
+DEBUG - 43 - Сохранили в базе
+DEBUG - 46 - Отправляем сообщение
+INFO - BotComponentEnd - rename - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:41:35,799
+INFO - BotComponentStart - rerole - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 34 - Проверили роли и пользователя
+DEBUG - 46 - Изменили роли
+DEBUG - 50 - Отправялем сообщение
+INFO - BotComponentEnd - rerole - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:41:57,453
+INFO - BotComponentStart - rerating - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 31 - Проверен пользователь
+DEBUG - 43 - Изменили рейтинг
+DEBUG - 47 - Отправялем сообщение
+INFO - BotComponentEnd - rerating - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:42:21,926
+INFO - BotComponentStart - me - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 34 - Проверен пользователь
+DEBUG - 37 - Отправляем сообщение
+INFO - BotComponentEnd - me - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:42:48,369
+INFO - BotComponentStart - startevent - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 32 - Отправляем сообщение с муляжем события
+DEBUG - 52 - Создали роли и канады для события
+DEBUG - 62 - Создали событие
+INFO - BotComponentEnd - startevent - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:43:01,636
+INFO - BotComponentStart - button_participate_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 27 - Проверен пользователь
+DEBUG - 38 - Проверили на изменение имени Discord
+DEBUG - 53 - Добавили пользователя в событие
+DEBUG - 67 - Добавили пользователю роль
+INFO - BotComponentEnd - button_participate_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:43:25,015
+INFO - BotComponentStart - button_participate_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 27 - Проверен пользователь
+DEBUG - 38 - Проверили на изменение имени Discord
+INFO - BotComponentEnd - button_participate_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:43:41,421
+INFO - BotComponentStart - button_participate_event_check - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 28 - Проверен пользователь
+DEBUG - 40 - получены пользователи события
+DEBUG - 50 - Отправялем сообщение
+INFO - BotComponentEnd - button_participate_event_check - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:43:50,837
+INFO - BotComponentStart - button_leave_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 27 - Проверили пользователя
+DEBUG - 42 - Удалил пользователя из базы события
+DEBUG - 54 - Забрали роль участника события
+INFO - BotComponentEnd - button_leave_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:44:35,162
+INFO - BotComponentStart - button_leave_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 27 - Проверили пользователя
+INFO - BotComponentEnd - button_leave_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:44:47,186
+INFO - BotComponentStart - button_participate_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 27 - Проверен пользователь
+DEBUG - 38 - Проверили на изменение имени Discord
+DEBUG - 53 - Добавили пользователя в событие
+DEBUG - 67 - Добавили пользователю роль
+INFO - BotComponentEnd - button_participate_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:44:50,455
+INFO - BotComponentStart - button_start_dm_mess - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 30 - Проверили роль пользователя
+DEBUG - 51 - Получиили информацию о событии
+DEBUG - 64 - Получили список участников события
+DEBUG - 74 - Разослали пользователям личные сообщения
+DEBUG - 76 - Отправляем сообщение
+INFO - BotComponentEnd - button_start_dm_mess - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:45:11,898
+INFO - BotComponentStart - button_start_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 34 - Проверили роль пользователя
+DEBUG - 51 - Получили инофрмацию о событии
+DEBUG - 63 - Изменили стату события
+DEBUG - 79 - Получили пользователей учавствующий в событии
+DEBUG - 92 - Сформировали команды
+DEBUG - 153 - Создали роли и каналы для команд и раздали роли пользователям
+DEBUG - 158 - Отпраляем сообщение
+INFO - BotComponentEnd - button_start_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:45:41,246
+INFO - BotComponentStart - button_participate_event_check_team - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 29 - Проверен пользователь
+DEBUG - 41 - Получили пользователей в событии
+DEBUG - 50 - Отправляем сообщение
+INFO - BotComponentEnd - button_participate_event_check_team - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-21 20:46:12,609
+INFO - BotComponentStart - button_end_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 32 - Роль пользователя проверена
+DEBUG - 49 - Получили событие
+DEBUG - 61 - Изменили стату события
+DEBUG - 93 - Удалили созданые роли и каналы
+DEBUG - 97 - Отправляем сообщение
+INFO - BotComponentEnd - button_end_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля

@@ -4,16 +4,18 @@ import interactions
 from bd_connection import execute_query
 from message import users_to_event_team_message
 import bot_info
+from logging import Logger
 
 
 from Comand_bot.add_error import add_error
 
 
-async def button_participate_event_check_team_comand(ctx: interactions.CommandContext):
+async def button_participate_event_check_team_comand(ctx: interactions.CommandContext, logger_comand: Logger):
     '''
     Кнопка просмотра команд(Comand_bot/button_participate_event_check_team.py). Передать парметры изначальной функции бота.
 
     :ivar interactions.CommandContext ctx: Контекст команды
+    :ivar Logger logger_comand: Клас логера обрабочика
     '''
     # Получаем имеющиеся данные о пользователе по id
     argx = (int(ctx.user.id),)
@@ -24,6 +26,8 @@ async def button_participate_event_check_team_comand(ctx: interactions.CommandCo
     if user == []:
         await ctx.send('Вы еще не зарегистрированы', ephemeral=True)
         return
+    logger_comand.debug('Проверен пользователь')
+
     # Полученные пареметры
     argx = (int(ctx.message.id),)
     # Сейв в бд
@@ -34,6 +38,7 @@ async def button_participate_event_check_team_comand(ctx: interactions.CommandCo
         return 
     for user_to_events in res:
         user_to_event = user_to_events.fetchall()
+    logger_comand.debug('Получили пользователей в событии')
     # Провека прав мембера
     # Полюбому можно лучге но я не справился
     permissions = str(ctx.member.permissions).split('|')
@@ -42,4 +47,5 @@ async def button_participate_event_check_team_comand(ctx: interactions.CommandCo
         if permissions_iterator == 'ADMINISTRATOR':
             permissions_administrator = True
     embed = users_to_event_team_message(user_to_event, permissions_administrator)
+    logger_comand.debug('Отправляем сообщение')
     await ctx.send(embeds=embed, ephemeral=True)

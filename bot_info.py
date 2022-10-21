@@ -25,9 +25,9 @@ TOKEN= 'MTAxODI5NTYyODczODA3MjYzNA.Gqza5J.yA5JMJUK76p6DSSWTol46n4UEcXnDwgKewy1A4
 Url_thunder_bot_image = 'https://sun9-61.userapi.com/impg/bzqNypaABZu6Mkmv4yo4Jhj2F9_8da6POPA4NA/CNwgzxZvv-A.jpg?size=511x511&quality=95&sign=bae5394587e5004fdf39074bb60c4646&type=album'
 role_id = 1020109545147727882
 # Конфиг базы
-config = 'config_debag.ini'
+# config = 'config_debag.ini'
 #Конфиг базы для бд на хоста
-#config = 'config_c4_db_debag.ini'
+config = 'config_c4_db_debag.ini'
 Reg_server_id = 929829439158747156
 Event_server_id = 930167181818343465
 Admin_server_id = 930179006903484456

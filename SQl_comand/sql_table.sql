@@ -52,6 +52,7 @@ CREATE TABLE error_mes
     channel varchar(200) not null,
     member varchar(200) not null,
     command varchar(200) not null,
-    error varchar(200) not null
+    error varchar(200) not null,
+    date_ad datetime 
     
 );

@@ -4,16 +4,18 @@ import interactions
 from bd_connection import execute_query
 from message import change_message
 import bot_info
+from logging import Logger
 
 from Comand_bot.add_error import add_error
 
 
-async def rerating_comand(ctx: interactions.CommandContext, rating: str):
+async def rerating_comand(ctx: interactions.CommandContext, rating: str, logger_comand: Logger):
     '''
     Изменение имени пользователя(Comand_bot/rerating.py). Передать парметры изначальной функции бота.
 
     :ivar interactions.CommandContext ctx: Контекст команды
     :ivar str rating: Измененный рейтинг
+    :ivar Logger logger_comand: Класс логера обрабочика
     '''
     # Деление на рейтинг и его числовой эквивалент
     rating_player = rating.split(':')
@@ -26,6 +28,8 @@ async def rerating_comand(ctx: interactions.CommandContext, rating: str):
     if user == []:
         await ctx.send('Вы еще не зарегистрированы', ephemeral=True)
         return
+    logger_comand.debug('Проверен пользователь')
+
     # Явно обзовем перемнные для лучшей читаемости
     user_name, rating, rating_value, role_1, role_2, role_3, role_4, role_5, ban = user[0][1], rating_player[0], int(rating_player[1]),user[0][4], user[0][5], user[0][6], user[0][7],user[0][8],user[0][9]
     # Полученные пареметры
@@ -36,6 +40,10 @@ async def rerating_comand(ctx: interactions.CommandContext, rating: str):
         # Логирование ошибки в базу
         await add_error(ctx, 'rerating', res, bot_info.Erorr_message_standart)
         return
+    logger_comand.debug('Изменили рейтинг')
+
     # Компановка сообщения
     message = change_message(ctx.author, user_name, rating,  role_1, role_2, role_3, role_4, role_5, 'Рейтинг Изменен')
+    logger_comand.debug('Отправялем сообщение')
+    
     await ctx.send(embeds=message, ephemeral=True)

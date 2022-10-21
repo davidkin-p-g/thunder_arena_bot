@@ -6,7 +6,6 @@ import discord
 from Comand_bot.registration_new import registration_new_comand
 
 from bd_connection import execute_query
-from Team_Comp import all_team_comp
 # Сайт основной библы
 #https://discord-py-slash-command.readthedocs.io/en/latest/
 # Работа с базой
@@ -22,17 +21,7 @@ from bot_info import TOKEN
 # from Add_Player import Add_Player
 # from Team_Comp import Team_Comp
 import bot_info
-from pluhers import check_role
-from message import startevent_message
-from message import change_message
-from message import users_to_event_message
-from message import startevent_go_message
-from message import startevent_end_message
-from message import users_to_event_team_message
-from message import me_message
 from Command_options import *
-# 2 бот 
-from discordpy import check_memeber_voice
 
 # Фйлы команд
 from Comand_bot.rename import rename_comand
@@ -49,8 +38,12 @@ from Comand_bot.button_start_event import button_start_event_comand
 from Comand_bot.button_end_event import button_end_event_comand
 from Comand_bot.button_participate_event_check_team import button_participate_event_check_team_comand
 
-
+#Файлы обрабочика ошибок
 from Comand_bot.add_error import add_error
+from Comand_bot.add_error import add_error_for_working_bot
+
+#Логер
+from log_start import create_config_log
 
 # interactions
 bot = interactions.Client(token=TOKEN)
@@ -66,10 +59,18 @@ client = discord.Client(intents=intents)
 )
 async def registration_new(ctx, user_name, role_1, role_2, role_3, role_4, role_5, rating):
     try:
-       await registration_new_comand(ctx, user_name, role_1, role_2, role_3, role_4, role_5, rating)
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['registration']  += 1
+        # Функционал команды
+        await registration_new_comand(ctx, user_name, role_1, role_2, role_3, role_4, role_5, rating, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        #добавлиение количества использований
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
-       await add_error(ctx, 'registration', str(ex), bot_info.Erorr_message_standart)
+        await add_error(ctx, 'registration', str(ex), bot_info.Erorr_message_standart)
+        
 
 
 # Команда изменения Ника пользователя
@@ -80,9 +81,14 @@ async def registration_new(ctx, user_name, role_1, role_2, role_3, role_4, role_
 )
 async def rename(ctx: interactions.CommandContext, user_name):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['rename']  += 1
         # Функционал команды
-        await rename_comand(ctx, user_name)
+        await rename_comand(ctx, user_name, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
         await add_error(ctx, 'rename', str(ex), bot_info.Erorr_message_standart)
 
@@ -95,9 +101,14 @@ async def rename(ctx: interactions.CommandContext, user_name):
 )
 async def rerating(ctx: interactions.CommandContext, rating):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['rerating']  += 1
         # Функционал команды
-        await rerating_comand(ctx, rating)
+        await rerating_comand(ctx, rating, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
         await add_error(ctx, 'rerating', str(ex), bot_info.Erorr_message_standart)
 
@@ -110,9 +121,14 @@ async def rerating(ctx: interactions.CommandContext, rating):
 )
 async def rerole(ctx: interactions.CommandContext, role_1, role_2, role_3, role_4, role_5):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['rerole']  += 1
         # Функционал команды
-        await rerole_comand(ctx, role_1, role_2, role_3, role_4, role_5)
+        await rerole_comand(ctx, role_1, role_2, role_3, role_4, role_5, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
         await add_error(ctx, 'rerole', str(ex), bot_info.Erorr_message_standart)
 
@@ -124,9 +140,14 @@ async def rerole(ctx: interactions.CommandContext, role_1, role_2, role_3, role_
 )
 async def me(ctx: interactions.CommandContext):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['me']  += 1
         # Функционал команды
-        await me_comand(ctx)
+        await me_comand(ctx, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
          # Логирование ошибки в базу
         await add_error(ctx, 'me', str(ex), bot_info.Erorr_message_standart)
 
@@ -141,9 +162,14 @@ async def me(ctx: interactions.CommandContext):
 )
 async def startevent(ctx: interactions.CommandContext, event_type, event_name, event_description, event_date_start):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['startevent']  += 1
          # Функционал команды
-        await startevent_comand(ctx, event_type, event_name, event_description, event_date_start)
+        await startevent_comand(ctx, event_type, event_name, event_description, event_date_start, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
          # Логирование ошибки в базу
         await add_error(ctx, 'startevent', str(ex), bot_info.Erorr_message_standart)
 
@@ -153,9 +179,14 @@ async def startevent(ctx: interactions.CommandContext, event_type, event_name, e
 @bot.component("participate_event")
 async def button_participate_event(ctx: interactions.CommandContext):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['participate_event']  += 1
         # Функционал команды
-        await button_participate_event_comand(ctx)
+        await button_participate_event_comand(ctx, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
          # Логирование ошибки в базу
         await add_error(ctx, 'participate_event', str(ex), bot_info.Erorr_message_standart)
         
@@ -164,11 +195,17 @@ async def button_participate_event(ctx: interactions.CommandContext):
 @bot.component("participate_event_check")
 async def button_participate_event_check(ctx: interactions.CommandContext):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['participate_event_check']  += 1
         # Функционал команды
-        await button_participate_event_check_comand(ctx)
+        await button_participate_event_check_comand(ctx, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except IndexError:
         await ctx.send('Нет участников. Стань первым))', ephemeral=True)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
         await add_error(ctx, 'participate_event_check', str(ex), bot_info.Erorr_message_standart)
 
@@ -177,9 +214,14 @@ async def button_participate_event_check(ctx: interactions.CommandContext):
 @bot.component("leave_event")
 async def button_leave_event(ctx: interactions.CommandContext):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['leave_event']  += 1
         # Функционал команды
-        await button_leave_event_comand(ctx)
+        await button_leave_event_comand(ctx, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
         await add_error(ctx, 'leave_event', str(ex), bot_info.Erorr_message_standart)
 
@@ -188,9 +230,14 @@ async def button_leave_event(ctx: interactions.CommandContext):
 @bot.component("start_dm_mess")
 async def button_start_dm_mess(ctx: interactions.CommandContext):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['start_dm_mess']  += 1
         # Функционал команды
-        await button_start_dm_mess_comand(ctx, bot)
+        await button_start_dm_mess_comand(ctx, bot, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
         await add_error(ctx, 'start_dm_mess', str(ex), bot_info.Erorr_message_standart)
        
@@ -199,9 +246,14 @@ async def button_start_dm_mess(ctx: interactions.CommandContext):
 @bot.component("start_event")
 async def button_start_event(ctx: interactions.CommandContext):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['start_event']  += 1
         # Функционал команды
-        await button_start_event_comand(ctx, bot, client)
+        await button_start_event_comand(ctx, bot, client, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
         await add_error(ctx, 'start_event', str(ex), bot_info.Erorr_message_standart)
        
@@ -210,9 +262,14 @@ async def button_start_event(ctx: interactions.CommandContext):
 @bot.component("end_event")
 async def button_end_event(ctx: interactions.CommandContext):
     try:
-       # Функционал команды
-        await button_end_event_comand(ctx, bot)
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['end_event']  += 1
+        # Функционал команды
+        await button_end_event_comand(ctx, bot, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
         await add_error(ctx, 'end_event', str(ex), bot_info.Erorr_message_standart)
        
@@ -221,27 +278,20 @@ async def button_end_event(ctx: interactions.CommandContext):
 @bot.component("participate_event_check_team")
 async def button_participate_event_check_team(ctx: interactions.CommandContext):
     try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        comand_dict['participate_event_check_team']  += 1
         # Функционал команды
-        await button_participate_event_check_team_comand(ctx)
+        await button_participate_event_check_team_comand(ctx, logger_comand)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except IndexError:
         await ctx.send('К сожалению на этом турнире нет участников)', ephemeral=True)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        comand_dict['error']  += 1
         # Логирование ошибки в базу
         await add_error(ctx, 'participate_event_check_team', str(ex), bot_info.Erorr_message_standart)
        
-#Админский блок сервисная часть
-
-# Баны пользователей может еще сколько игр сыграл
-@bot.command(
-    name = 'check_channel',
-    description= 'Админская команда для определения id канала',
-    default_member_permissions= interactions.Permissions.ADMINISTRATOR
-
-)
-async def check_channel(ctx: interactions.CommandContext):
-    
-    await ctx.send(str(ctx.channel_id))
-
 
 # Временный блок
 @bot.command(
@@ -275,14 +325,23 @@ async def on_ready():
     print(f'We have logged in as {client.user}')
 
 if __name__ == '__main__':
-    # Запускаем одновременно 2 обрабочика событий с разный библиотек
-    loop = asyncio.get_event_loop()
+    # Подключаем Log
+    logger_bot_component_start, logger_bot_component_end, logger_comand, logger_bot, comand_dict = create_config_log()
+    i = 0
+    while i < 5:
+        try:
+            i += 1
+            logger_bot.info('Бот запущен')
+            # Запускаем одновременно 2 обрабочика событий с разный библиотек
+            loop = asyncio.get_event_loop()
 
-    # асинхронно запущенные таски кажеться ))
-    task2 = loop.create_task(client.start(bot_info.TOKEN))
-    task1 = loop.create_task(bot._ready())
-    
-    
-    # Кажеться обьединяет их и дает им работать одновременно
-    gathered = asyncio.gather(task1, task2)
-    loop.run_until_complete(gathered)
+            # асинхронно запущенные таски кажеться ))
+            task2 = loop.create_task(client.start(bot_info.TOKEN))
+            task1 = loop.create_task(bot._ready())
+            
+            # Кажеться обьединяет их и дает им работать одновременно
+            gathered = asyncio.gather(task1, task2)
+            loop.run_until_complete(gathered)
+        except Exception as ex:
+            logger_bot.error(f'ER_0 Произошла ошибка в работе бота, итерация {i} \n Exception: {ex}')
+            add_error_for_working_bot(0, i, 'Bot', 'Start_bot', str(ex))

@@ -4,11 +4,12 @@ import interactions
 from bd_connection import execute_query
 from message import change_message
 import bot_info
+from logging import Logger
 from pluhers import check_role
 
 from Comand_bot.add_error import add_error
 
-async def registration_new_comand(ctx: interactions.CommandContext, user_name: str, role_1: str, role_2: str, role_3: str, role_4: str, role_5: str, rating: str):
+async def registration_new_comand(ctx: interactions.CommandContext, user_name: str, role_1: str, role_2: str, role_3: str, role_4: str, role_5: str, rating: str, logger_comand: Logger):
     '''
     Регистрация пользователя(Comand_bot/registration_new.py). Передать парметры изначальной функции бота.
 
@@ -16,12 +17,15 @@ async def registration_new_comand(ctx: interactions.CommandContext, user_name: s
     :ivar str user_name: Имя пользователя
     :ivar str role_?: Роли пользователя
     :ivar str rating: Рейтинг пользователя
+    :ivar Logger logger_comand: Класс логера обрабочика
     '''
 
     # Проверка ролей
     if not check_role(role_1, role_2, role_3, role_4, role_5):
         await ctx.send('Роли не могут повторяться', ephemeral=True)
         return
+    logger_comand.debug('Проверили роли')
+
     # Деление на рейтинг и его числовой эквивалент
     rating_player = rating.split(':')
     # Явно обзовем перемнные для лучшей читаемости
@@ -41,8 +45,14 @@ async def registration_new_comand(ctx: interactions.CommandContext, user_name: s
             # Логирование ошибки в базу
             await add_error(ctx, 'registration', res, bot_info.Erorr_message_standart)
         return
+    logger_comand.debug('Зарегистрировали нового участника')
+
     # Выдадим роль Учатника
     await ctx.author.add_role(bot_info.role_id, ctx.guild_id)
+    logger_comand.debug('Добавили роль')
+
     # Компановка сообщения
     message = change_message(ctx.author, user_name, rating, role_1, role_2, role_3, role_4, role_5, 'Новый пользователь')
+    logger_comand.debug('Отправляем сообщение')
+    
     await ctx.send(embeds=message, ephemeral=True)

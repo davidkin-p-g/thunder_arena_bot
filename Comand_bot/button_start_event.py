@@ -4,6 +4,7 @@ import interactions
 from bd_connection import execute_query
 from message import startevent_go_message
 import bot_info
+from logging import Logger
 from Team_Comp import all_team_comp
 
 from Comand_bot.button import *
@@ -11,13 +12,14 @@ from Comand_bot.button import *
 from Comand_bot.add_error import add_error
 
 
-async def button_start_event_comand(ctx: interactions.CommandContext, bot, client):
+async def button_start_event_comand(ctx: interactions.CommandContext, bot, client, logger_comand: Logger):
     '''
     Кнопка начала события(Comand_bot/button_start_event.py). Передать парметры изначальной функции бота.
 
     :ivar interactions.CommandContext ctx: Контекст команды
     :ivar interactions.Client bot: Основной клиент запуска бота
     :ivar discord.Client client: дополнительный клиент запуска бота
+    :ivar Logger logger_comand: Класс логера обрабочика
     '''
     # Провека прав мембера
     # Полюбому можно лучге но я не справился
@@ -29,6 +31,8 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
     if not permissions_administrator:
         await ctx.send('Вы не администратор', ephemeral=True)
         return
+    logger_comand.debug('Проверили роль пользователя')
+
     # Получаем параметры События
     argx = (int(ctx.message.id),)
     res = execute_query('check_event', argx)
@@ -44,6 +48,7 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
         # Логирование ошибки в базу
         await add_error(ctx, 'button_start_event', 'Несуществующий евент', bot_info.Erorr_message_standart)
         return
+    logger_comand.debug('Получили инофрмацию о событии')
 
     # Изменяем статус события
     # Полученные пареметры
@@ -55,6 +60,8 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
         # Логирование ошибки в базу
         await add_error(ctx, 'button_start_event', res, bot_info.Erorr_message_standart)
         return
+    logger_comand.debug('Изменили стату события')
+
     # Полученные пареметры
     argx = (int(ctx.message.id),)
     # Сейв в бд
@@ -65,6 +72,12 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
         return   
     for user_to_events in res:
         user_to_event = user_to_events.fetchall()
+    
+    #------------------------------
+    # Проверить на пустоту масива участников 
+    #------------------------------
+    logger_comand.debug('Получили пользователей учавствующий в событии')
+
     # Провека прав мембера
     # Полюбому можно лучге но я не справился
     permissions = str(ctx.member.permissions).split('|')
@@ -75,11 +88,9 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
 
     # Формирование команд + проверка войса
     comand_count = all_team_comp(user_to_event, permissions_administrator, int(ctx.message.id), client)
-    # /Формирование команд 
-    if isinstance(res, str):
-        # Логирование ошибки в базу
-        await add_error(ctx, 'button_start_event', res, bot_info.Erorr_message_standart)
-        return
+    # /Формирование команд
+    logger_comand.debug('Сформировали команды')
+    
     # Получаем всех участников
     # Полученные пареметры
     argx = (int(ctx.message.id),)
@@ -92,6 +103,7 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
 
     for user_to_events in res:
         user_to_event = user_to_events.fetchall()
+
     #Генерим каналы и роли для команд и запасных
     id_channel_team_arr = ''
     id_role_team_arr = ''
@@ -138,7 +150,11 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
             print(res)
             await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
             return
+    logger_comand.debug('Создали роли и каналы для команд и раздали роли пользователям')
+
     # Генерим сообщение
     type, event_name, event_description = event[0][3], event[0][4], event[0][5]
     embed = startevent_go_message(type, event_name, event_description)
+    logger_comand.debug('Отпраляем сообщение')
+
     await ctx.message.edit(embeds=embed, components=row1)

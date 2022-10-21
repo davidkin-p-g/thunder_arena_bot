@@ -4,12 +4,13 @@ import interactions
 from bd_connection import execute_query
 from message import startevent_message
 import bot_info
+from logging import Logger
 
 from Comand_bot.button import *
 from Comand_bot.add_error import add_error
 
 
-async def startevent_comand(ctx: interactions.CommandContext, event_type: str, event_name: str, event_description: str, event_date_start: str):
+async def startevent_comand(ctx: interactions.CommandContext, event_type: str, event_name: str, event_description: str, event_date_start: str, logger_comand: Logger):
     '''
     Запуск нового события(Comand_bot/me.py). Передать парметры изначальной функции бота.
 
@@ -18,6 +19,7 @@ async def startevent_comand(ctx: interactions.CommandContext, event_type: str, e
     :ivar str event_name: Названия события
     :ivar str event_description: Описание события
     :ivar str event_date_start: Дата Начала события DateTime тип базы данных
+    :ivar Logger logger_comand: Класс логера обрабочика
     '''
 
     # Так как я не могу получить нормальный id сообщения до его отправки 
@@ -27,6 +29,8 @@ async def startevent_comand(ctx: interactions.CommandContext, event_type: str, e
     # Компановка сообщения
     message = startevent_message(event_type, event_name, event_description, event_date_start)
     await ctx.send(embeds=message, components=row)
+    logger_comand.debug('Отправляем сообщение с муляжем события')
+
     # Добавляю роль для события
     role = await ctx.guild.create_role(name=event_name)
     # Добавляю каналы для события parent_id
@@ -45,6 +49,8 @@ async def startevent_comand(ctx: interactions.CommandContext, event_type: str, e
     # Каналы прикреполенные к категории с привязкой прав
     text_channel = await ctx.guild.create_channel(name=event_name, type=interactions.ChannelType(0), permission_overwrites=permission,parent_id=int(category.id))
     voice_channel = await ctx.guild.create_channel(name=event_name, type=interactions.ChannelType(2), permission_overwrites=permission,parent_id=int(category.id))
+    logger_comand.debug('Создали роли и канады для события')
+
     # Полученные пареметры
     argx = (int(ctx.message.id), event_type, event_name, event_description, event_date_start, int(role.id), int(text_channel.id), int(voice_channel.id), int(category.id))
     # Сейв в бд
@@ -53,3 +59,4 @@ async def startevent_comand(ctx: interactions.CommandContext, event_type: str, e
          # Логирование ошибки в базу
         await add_error(ctx, 'startevent', res, bot_info.Erorr_message_standart)
         return
+    logger_comand.debug('Создали событие')

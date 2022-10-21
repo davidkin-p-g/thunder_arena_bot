@@ -4,17 +4,19 @@ import interactions
 from bd_connection import execute_query
 from message import change_message
 import bot_info
+from logging import Logger
 from pluhers import check_role
 
 from Comand_bot.add_error import add_error
 
 
-async def rerole_comand(ctx: interactions.CommandContext, role_1: str, role_2: str, role_3: str, role_4: str, role_5: str):
+async def rerole_comand(ctx: interactions.CommandContext, role_1: str, role_2: str, role_3: str, role_4: str, role_5: str, logger_comand: Logger):
     '''
     Изменение имени пользователя(Comand_bot/rerole.py). Передать парметры изначальной функции бота.
 
     :ivar interactions.CommandContext ctx: Контекст команды
     :ivar str role_?:  Измененые роли пользователя
+    :ivar Logger logger_comand: Класс логера обрабочика
     '''
     # Проверка на уникальность ролей  
     if not check_role(role_1, role_2, role_3, role_4, role_5):
@@ -29,6 +31,8 @@ async def rerole_comand(ctx: interactions.CommandContext, role_1: str, role_2: s
     if user == []:
         await ctx.send('Вы еще не зарегистрированы', ephemeral=True)
         return
+    logger_comand.debug('Проверили роли и пользователя')
+
     # Явно обзовем перемнные для лучшей читаемости
     user_name, rating, rating_value, ban = user[0][1], user[0][2], user[0][3], user[0][9]
     # Полученные пареметры
@@ -39,6 +43,10 @@ async def rerole_comand(ctx: interactions.CommandContext, role_1: str, role_2: s
         # Логирование ошибки в базу
         await add_error(ctx, 'rerole', res, bot_info.Erorr_message_standart)
         return
+    logger_comand.debug('Изменили роли')
+
     # Компановка сообщения
     message = change_message(ctx.author, user_name, rating, role_1, role_2, role_3, role_4, role_5, 'Выбор ролей изменен')
+    logger_comand.debug('Отправялем сообщение')
+    
     await ctx.send(embeds=message, ephemeral=True)
