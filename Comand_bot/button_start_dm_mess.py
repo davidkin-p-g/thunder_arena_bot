@@ -69,8 +69,12 @@ async def button_start_dm_mess_comand(ctx: interactions.CommandContext, bot, log
     # Отправляем личное сообщение каждому пользователю в личку
     
     for user in user_to_event:
-        member = interactions.Member(**await bot._http.get_member(member_id=int(user[0]), guild_id=int(ctx.guild_id)), _client=bot._http)
-        await member.send(f'Началась провека готовности участников в событии {user[1]}. \nПожалуйста, зайдите в голосовой канал события для проверки. \nПредупреждение: В случае вашего отсутствия в канале, вероятность отправиться в запас увеличится.')
+        try:
+            member = interactions.Member(**await bot._http.get_member(member_id=int(user[0]), guild_id=int(ctx.guild_id)), _client=bot._http)
+            await member.send(f'Началась провека готовности участников в событии {user[1]}. \nПожалуйста, зайдите в голосовой канал события для проверки. \nПредупреждение: В случае вашего отсутствия в канале, вероятность отправиться в запас увеличится.')
+        except:
+            member = interactions.Member(**await bot._http.get_member(member_id=bot_info.admin_dm_id, guild_id=int(ctx.guild_id)), _client=bot._http)
+            await member.send(f'Чувак с ником {user[10]} не получил сообщение предупредите там его что играть скоро надо')
     logger_comand.debug('Разослали пользователям личные сообщения')
 
     logger_comand.debug('Отправляем сообщение')

@@ -35,7 +35,7 @@ async def startevent_comand(ctx: interactions.CommandContext, event_type: str, e
     role = await ctx.guild.create_role(name=event_name)
     # Добавляю каналы для события parent_id
     # Категория
-    category = await ctx.guild.create_channel(name=event_name, type=interactions.ChannelType(4))
+    category = await ctx.guild.create_channel(name=event_name, type=interactions.ChannelType(4), position=3)
     permission = [
         interactions.Overwrite(
             id=int(role.id),

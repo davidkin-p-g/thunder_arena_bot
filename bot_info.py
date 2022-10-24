@@ -19,6 +19,8 @@
 # Spam_server_id = 930459221508636712
 # everyone_id = 785864773887590420
 # log_channel_id = 930459142961901598
+# admin_dm_id = 298472656401989634
+# category_id = 785895738755907595
 
 
 # debug
@@ -35,6 +37,9 @@ Admin_server_id = 930179006903484456
 Spam_server_id = 930227903520706580
 everyone_id = 663569174831824948
 log_channel_id = 929829439158747156
+admin_dm_id = 178963010751168512
+category_id = 1034222694473932810
+
 
 Info_to_Prayer_arr = []
 Info_to_Prayer_arr_to_Add = []

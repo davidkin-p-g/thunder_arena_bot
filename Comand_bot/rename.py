@@ -10,12 +10,13 @@ from Comand_bot.add_error import add_error
 
 
 
-async def rename_comand(ctx: interactions.CommandContext, user_name: str, logger_comand: Logger):
+async def rename_comand(ctx: interactions.CommandContext, user_name: str, logger_comand: Logger, bot):
     '''
     Изменение имени пользователя(Comand_bot/rename.py). Передать парметры изначальной функции бота.
 
     :ivar interactions.CommandContext ctx: Контекст команды
     :ivar str user_name: Измененное имя
+    :ivar interactions.Client bot: Основной клиент запуска бота
     :ivar Logger logger_comand: Класс логера обрабочика
     '''
     # Получаем имеющиеся данные о пользователе по id
@@ -27,6 +28,8 @@ async def rename_comand(ctx: interactions.CommandContext, user_name: str, logger
     if user == []:
         await ctx.send('Вы еще не зарегистрированы', ephemeral=True)
         return
+    # Старый ник для того что бы рите отправить 
+    old_name = user[0][1]
     logger_comand.debug('Проверен пользователь')
     
     # Явно обзовем перемнные для лучшей читаемости
@@ -41,6 +44,12 @@ async def rename_comand(ctx: interactions.CommandContext, user_name: str, logger
         await add_error(ctx, 'rename', res, bot_info.Erorr_message_standart)
         return
     logger_comand.debug('Сохранили в базе')
+
+    # Отправляем посылку рите
+    member = interactions.Member(**await bot._http.get_member(member_id=bot_info.admin_dm_id, guild_id=int(ctx.guild_id)), _client=bot._http)
+    await member.send(f'Опять кто то епамать ники меняет\n Был знаете ли {old_name}, а стал {user_name}.\n Извините за творчество))')
+    logger_comand.debug('Проинформировали Риту')
+
     # Компановка сообщения
     message = change_message(ctx.author, user_name, rating,  role_1, role_2, role_3, role_4, role_5, 'UserName изменено')
     logger_comand.debug('Отправляем сообщение')

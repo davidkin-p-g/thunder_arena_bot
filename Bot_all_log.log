@@ -834,3 +834,169 @@ INFO - Bot - Бот запущен
 INFO - Bot - Бот запущен
 2022-10-25 00:16:39,168
 INFO - Bot - Бот запущен
+2022-10-25 00:34:38,330
+INFO - Bot - Бот запущен
+2022-10-25 00:34:53,554
+INFO - BotComponentStart - button_participate_event_check_team - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 29 - Проверен пользователь
+DEBUG - 41 - Получили пользователей в событии
+DEBUG - 50 - Отправляем сообщение
+INFO - BotComponentEnd - button_participate_event_check_team - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 00:43:43,944
+INFO - Bot - Бот запущен
+2022-10-25 00:43:59,225
+INFO - BotComponentStart - rename - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 00:43:59,229
+INFO - BotComponentStart - rename - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 30 - Проверен пользователь
+DEBUG - 33 - Проверен пользователь
+DEBUG - 46 - Сохранили в базе
+DEBUG - 43 - Сохранили в базе
+DEBUG - 46 - Отправляем сообщение
+INFO - BotComponentEnd - rename - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 51 - Прщинформировали Риту
+DEBUG - 55 - Отправляем сообщение
+ERROR - BotComponentEnd - rename - ER Компонент завершен с ошибкой id_user: 178963010751168512, discord_name: Ябля 
+ Exception: An error occurred:
+Interaction has already been acknowledged., with code '40060' and severity '40'
+2022-10-25 00:45:53,378
+INFO - BotComponentStart - button_participate_event_check_team - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 29 - Проверен пользователь
+DEBUG - 41 - Получили пользователей в событии
+DEBUG - 50 - Отправляем сообщение
+INFO - BotComponentEnd - button_participate_event_check_team - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 00:48:37,520
+INFO - Bot - Бот запущен
+2022-10-25 00:48:43,942
+INFO - BotComponentStart - button_participate_event_check_team - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 00:48:43,950
+INFO - BotComponentStart - button_participate_event_check_team - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 29 - Проверен пользователь
+DEBUG - 29 - Проверен пользователь
+DEBUG - 41 - Получили пользователей в событии
+DEBUG - 50 - Отправляем сообщение
+DEBUG - 41 - Получили пользователей в событии
+DEBUG - 50 - Отправляем сообщение
+ERROR - BotComponentEnd - button_participate_event_check_team - ER Компонент завершен с ошибкой id_user: 178963010751168512, discord_name: Ябля 
+ Exception: An error occurred:
+Unknown interaction, with code '10062' and severity '40'
+INFO - BotComponentEnd - button_participate_event_check_team - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 00:49:16,265
+INFO - BotComponentStart - button_participate_event_check_team - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 00:49:16,271
+INFO - BotComponentStart - button_participate_event_check_team - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 29 - Проверен пользователь
+DEBUG - 29 - Проверен пользователь
+DEBUG - 41 - Получили пользователей в событии
+DEBUG - 50 - Отправляем сообщение
+DEBUG - 41 - Получили пользователей в событии
+DEBUG - 50 - Отправляем сообщение
+ERROR - BotComponentEnd - button_participate_event_check_team - ER Компонент завершен с ошибкой id_user: 178963010751168512, discord_name: Ябля 
+ Exception: An error occurred:
+Unknown interaction, with code '10062' and severity '40'
+INFO - BotComponentEnd - button_participate_event_check_team - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 00:55:42,503
+INFO - Bot - Бот запущен
+2022-10-25 00:55:59,028
+INFO - BotComponentStart - startevent - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 32 - Отправляем сообщение с муляжем события
+ERROR - BotComponentEnd - startevent - ER Компонент завершен с ошибкой id_user: 178963010751168512, discord_name: Ябля 
+ Exception: Invalid Form Body (code: 50035, severity 40)
+Error at parent_id: CHANNEL_PARENT_INVALID_PARENT - Categories cannot have subcategories
+2022-10-25 00:58:29,696
+INFO - Bot - Бот запущен
+2022-10-25 00:58:39,687
+INFO - BotComponentStart - startevent - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 32 - Отправляем сообщение с муляжем события
+ERROR - BotComponentEnd - startevent - ER Компонент завершен с ошибкой id_user: 178963010751168512, discord_name: Ябля 
+ Exception: create_channel() got an unexpected keyword argument 'default_sort_order'
+2022-10-25 00:59:53,548
+INFO - Bot - Бот запущен
+2022-10-25 01:00:03,566
+INFO - BotComponentStart - startevent - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 32 - Отправляем сообщение с муляжем события
+DEBUG - 52 - Создали роли и канады для события
+DEBUG - 62 - Создали событие
+INFO - BotComponentEnd - startevent - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:00:36,583
+INFO - Bot - Бот запущен
+2022-10-25 01:00:51,566
+INFO - BotComponentStart - startevent - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 32 - Отправляем сообщение с муляжем события
+DEBUG - 52 - Создали роли и канады для события
+DEBUG - 62 - Создали событие
+INFO - BotComponentEnd - startevent - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:01:29,023
+INFO - BotComponentStart - button_participate_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 27 - Проверен пользователь
+DEBUG - 38 - Проверили на изменение имени Discord
+DEBUG - 53 - Добавили пользователя в событие
+DEBUG - 67 - Добавили пользователю роль
+INFO - BotComponentEnd - button_participate_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:01:32,583
+INFO - BotComponentStart - button_start_dm_mess - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 30 - Проверили роль пользователя
+DEBUG - 51 - Получиили информацию о событии
+DEBUG - 64 - Получили список участников события
+DEBUG - 74 - Разослали пользователям личные сообщения
+DEBUG - 76 - Отправляем сообщение
+INFO - BotComponentEnd - button_start_dm_mess - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:01:36,797
+INFO - BotComponentStart - button_start_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 34 - Проверили роль пользователя
+DEBUG - 51 - Получили инофрмацию о событии
+DEBUG - 63 - Изменили стату события
+DEBUG - 79 - Получили пользователей учавствующий в событии
+DEBUG - 92 - Сформировали команды
+DEBUG - 153 - Создали роли и каналы для команд и раздали роли пользователям
+DEBUG - 158 - Отпраляем сообщение
+INFO - BotComponentEnd - button_start_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:01:41,947
+INFO - BotComponentStart - button_end_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 32 - Роль пользователя проверена
+DEBUG - 49 - Получили событие
+DEBUG - 61 - Изменили стату события
+DEBUG - 93 - Удалили созданые роли и каналы
+DEBUG - 97 - Отправляем сообщение
+INFO - BotComponentEnd - button_end_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:01:47,367
+INFO - BotComponentStart - button_participate_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 27 - Проверен пользователь
+DEBUG - 38 - Проверили на изменение имени Discord
+DEBUG - 53 - Добавили пользователя в событие
+DEBUG - 67 - Добавили пользователю роль
+INFO - BotComponentEnd - button_participate_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:01:54,268
+INFO - BotComponentStart - button_start_dm_mess - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 30 - Проверили роль пользователя
+DEBUG - 51 - Получиили информацию о событии
+DEBUG - 64 - Получили список участников события
+DEBUG - 74 - Разослали пользователям личные сообщения
+DEBUG - 76 - Отправляем сообщение
+INFO - BotComponentEnd - button_start_dm_mess - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:01:58,256
+INFO - BotComponentStart - button_start_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 34 - Проверили роль пользователя
+DEBUG - 51 - Получили инофрмацию о событии
+DEBUG - 63 - Изменили стату события
+DEBUG - 79 - Получили пользователей учавствующий в событии
+DEBUG - 92 - Сформировали команды
+DEBUG - 153 - Создали роли и каналы для команд и раздали роли пользователям
+DEBUG - 158 - Отпраляем сообщение
+INFO - BotComponentEnd - button_start_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:02:02,222
+INFO - BotComponentStart - button_end_event - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 32 - Роль пользователя проверена
+DEBUG - 49 - Получили событие
+DEBUG - 61 - Изменили стату события
+DEBUG - 93 - Удалили созданые роли и каналы
+DEBUG - 97 - Отправляем сообщение
+INFO - BotComponentEnd - button_end_event - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля
+2022-10-25 01:02:15,435
+INFO - Bot - Бот запущен
+2022-10-25 01:02:32,352
+INFO - BotComponentStart - startevent - Зпущен компонент id_user: 178963010751168512, discord_name: Ябля
+DEBUG - 32 - Отправляем сообщение с муляжем события
+DEBUG - 52 - Создали роли и канады для события
+DEBUG - 62 - Создали событие
+INFO - BotComponentEnd - startevent - Компонент успешно завершен id_user: 178963010751168512, discord_name: Ябля

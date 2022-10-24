@@ -212,7 +212,7 @@ def users_to_event_message(user_to_event, admin= False):
                 if admin:
                     val = val + f"**{user_to_event[i+j][2]}**   {user_to_event[i+j][3]}||{user_to_event[i+j][4]}/{user_to_event[i+j][5]}/{user_to_event[i+j][6]}/{user_to_event[i+j][7]}/{user_to_event[i+j][8]}||\n"
                 else:
-                    val = val + f"{user_to_event[i+j][2]}\n"
+                    val = val + f"**{user_to_event[i+j][2]}**\n"
         field.value = val
         fields_embed.append(field)
 
@@ -242,9 +242,9 @@ def users_to_event_team_message(user_to_event, admin= False):
 
     while user_to_event[users_team_start][3] is None:
         if admin:
-            val = val + f"**{user_to_event[users_team_start][2]}** {user_to_event[users_team_start][4]}({user_to_event[users_team_start][5]})\n"
+            val = val + f"**{user_to_event[users_team_start][12]}** **{user_to_event[users_team_start][2]}** {user_to_event[users_team_start][4]}({user_to_event[users_team_start][5]}) ||{user_to_event[users_team_start][7]}/{user_to_event[users_team_start][8]}/{user_to_event[users_team_start][9]}/{user_to_event[users_team_start][10]}/{user_to_event[users_team_start][11]}||\n"
         else:
-            val = val + f"{user_to_event[users_team_start][2]}\n"
+            val = val + f"**{user_to_event[users_team_start][2]}**\n"
         users_team_start += 1
         if users_team_start >= users_count:
             break
@@ -262,9 +262,9 @@ def users_to_event_team_message(user_to_event, admin= False):
         for j in range(users_block_count):
             if i +j < users_count:
                 if admin:
-                    val = val + f"**{user_to_event[i+j][2]}**   {user_to_event[i+j][4]}({user_to_event[i+j][5]}) {user_to_event[i+j][6]}\n"
+                    val = val + f"**{user_to_event[users_team_start][12]}** **{user_to_event[i+j][2]}**   {user_to_event[i+j][4]}({user_to_event[i+j][5]}) {user_to_event[i+j][6]}\n"
                 else:
-                    val = val + f"{user_to_event[i+j][2]} {user_to_event[i+j][6]}\n"
+                    val = val + f"**{user_to_event[users_team_start][12]}** **{user_to_event[i+j][2]}** {user_to_event[i+j][6]}\n"
         field.value = val
         fields_embed.append(field)
 

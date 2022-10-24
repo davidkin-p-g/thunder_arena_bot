@@ -91,7 +91,7 @@ async def rename(ctx: interactions.CommandContext, user_name):
         logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
         bot_info.comand_dict['rename'][0]  += 1
         # Функционал команды
-        await rename_comand(ctx, user_name, logger_comand)
+        await rename_comand(ctx, user_name, logger_comand, bot)
         logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
     except Exception as ex:
         logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
