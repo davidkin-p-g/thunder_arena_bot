@@ -18,6 +18,7 @@
 # Admin_server_id = 930459142961901598
 # Spam_server_id = 930459221508636712
 # everyone_id = 785864773887590420
+# log_channel_id = 930459142961901598
 
 
 # debug
@@ -33,11 +34,32 @@ Event_server_id = 930167181818343465
 Admin_server_id = 930179006903484456
 Spam_server_id = 930227903520706580
 everyone_id = 663569174831824948
+log_channel_id = 929829439158747156
 
 Info_to_Prayer_arr = []
 Info_to_Prayer_arr_to_Add = []
 
 Erorr_message_standart = 'Произошла ошибка пожалуйста сообщите администрации'
+
+#Общий словать количесва использований использования
+# [Всего использований, Использований во время последней выгрузки, Название метода]
+comand_dict = {
+    'registration':[0, 0, 'Регистрация'],
+    'rename':[0, 0, 'Изминение Имени'],
+    'rerating':[0, 0, 'Изменение рейтинга'],
+    'rerole':[0, 0, 'Изменение роли'],
+    'me':[0, 0, 'Узнать о себе'],
+    'startevent':[0, 0, 'Запуск события'],
+    'participate_event':[0, 0, 'Учавствовать в событии'],
+    'participate_event_check':[0, 0, 'Проверка пользователей в событии'],
+    'leave_event':[0, 0, 'Уйти с события'],
+    'start_dm_mess':[0, 0, 'Разослать сообщение о начале события'],
+    'start_event':[0, 0, 'Запустить событие'],
+    'end_event':[0, 0, 'Закончить событие'],
+    'participate_event_check_team':[0, 0, 'Проверка команд в событии'],
+    'send_log':[0, 0, 'Вывод лога в дискорд'],
+    'error':[0, 0, 'Ошибки']
+}
 
 # ЭТО ЛЕГЕНТААААААААААА
 # member = interactions.Member(**await bot._http.get_member(member_id=int(users[0][0]), guild_id=663569174831824948), _client=bot._http)
