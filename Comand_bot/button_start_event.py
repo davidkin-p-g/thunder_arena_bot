@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from distutils.log import error
 import interactions
 from bd_connection import execute_query
 from message import startevent_go_message
@@ -87,7 +88,9 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
             permissions_administrator = True
 
     # Формирование команд + проверка войса
-    comand_count = all_team_comp(user_to_event, permissions_administrator, int(ctx.message.id), client)
+    comand_count, error = all_team_comp(user_to_event, permissions_administrator, int(ctx.message.id), client, logger_comand)
+    if error != '':
+        await ctx.send(error, ephemeral=True)
     # /Формирование команд
     logger_comand.debug('Сформировали команды')
     

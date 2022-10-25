@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
+from distutils.log import error
 import json
 import random
 import time
 import copy
+from logging import Logger
 
 from bd_connection import execute_query
 # 2 бот 
@@ -237,9 +239,10 @@ def add_info_db(zapas_id, team_comps, id_event):
     return True
 
 
-def all_team_comp(user_to_event, permissions_administrator, id_event, client):
+def all_team_comp(user_to_event, permissions_administrator, id_event, client, logger_comand: Logger):
+    error = ''
     # Запуск сторонего бота для провекри пользователей
-    missing_memeber = check_memeber_voice(user_to_event, client)
+    missing_memeber, error = check_memeber_voice(user_to_event, client, logger_comand)
     zapas_name, team_comps, comand_count = team_comp_def(user_to_event, missing_memeber)
     zapas_id = []
     for zapas in zapas_name:
@@ -254,4 +257,4 @@ def all_team_comp(user_to_event, permissions_administrator, id_event, client):
     res = add_info_db(zapas_id, player_list, id_event)
     if isinstance(res, str):
             return res
-    return comand_count
+    return comand_count, error
