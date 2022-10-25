@@ -14,7 +14,7 @@ async def schedule_start(bot):
     # Эта говнохуйня которая мне не нравиться
     while True:
         not_time = datetime.now()
-        if not_time.hour == 22 and not_time.minute == 00:
+        if not_time.hour == 23 and not_time.minute == 00:
             await send_log_comand(bot=bot)
             await asyncio.sleep(100)
         await asyncio.sleep(30)
