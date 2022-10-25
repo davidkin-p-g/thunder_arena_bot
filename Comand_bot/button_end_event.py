@@ -92,13 +92,13 @@ async def button_end_event_comand(ctx: interactions.CommandContext, bot, logger_
         logger_comand.debug('Отправляем сообщение')
         await ctx.message.edit(embeds=embed, components=row2)
     except Exception as ex:
-        
+
         logger_comand.warning(f'Во время удаления ролей и каналов произошла ошибка.\n Exception: {ex}')
-        await ctx.send('Во время удаления ролей и каналов произошла ошибка. Проверьте фактическое удаление каналов и ролей данного события', ephemeral=True)
         type, event_name, event_description = event[0][3], event[0][4], event[0][5]
         embed = startevent_end_message(type, event_name, event_description)
 
         logger_comand.debug('Отправляем сообщение')
         await ctx.message.edit(embeds=embed, components=row2)
+        await ctx.send('Во время удаления ролей и каналов произошла ошибка. Проверьте фактическое удаление каналов и ролей данного события', ephemeral=True)
         return
     

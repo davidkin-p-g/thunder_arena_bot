@@ -155,14 +155,21 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
                 await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
                 return
         logger_comand.debug('Создали роли и каналы для команд и раздали роли пользователям')
+
+        # Генерим сообщение
+        type, event_name, event_description = event[0][3], event[0][4], event[0][5]
+        embed = startevent_go_message(type, event_name, event_description)
+
+        logger_comand.debug('Отпраляем сообщение')
+        await ctx.message.edit(embeds=embed, components=row1)
+
     except Exception as ex:
         logger_comand.warning(f'Во время генерации ролей и каналов произошла ошибка.\n Exception: {ex}')
+
+        # Генерим сообщение
+        type, event_name, event_description = event[0][3], event[0][4], event[0][5]
+        embed = startevent_go_message(type, event_name, event_description)
+        logger_comand.debug('Отпраляем сообщение')
+
+        await ctx.message.edit(embeds=embed, components=row1)
         await ctx.send('Во время генерации ролей и каналов произошла ошибка. Команды и роли были созданы не правильно. Работа бота не нарушена за усключением ролей и каналов для участников.', ephemeral=True)
-    
-
-    # Генерим сообщение
-    type, event_name, event_description = event[0][3], event[0][4], event[0][5]
-    embed = startevent_go_message(type, event_name, event_description)
-    logger_comand.debug('Отпраляем сообщение')
-
-    await ctx.message.edit(embeds=embed, components=row1)
