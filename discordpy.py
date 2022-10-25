@@ -19,8 +19,8 @@ def check_memeber_voice(user_to_event, client, logger_comand: Logger):
         logger_comand.debug('Сгенерировали список отсутствующих учасников')
         error = ''
         return missing_members, error
-    except:
-        logger_comand.warning('Не удалось сгенерировать список отсутствующих')
-        error = 'Произошла не критическая ошибка с определением участников в голосовм канале, теперь жто не будет влиять на распределение'
+    except Exception as ex:
+        logger_comand.warning(f'Не удалось сгенерировать список отсутствующих.\n Exception: {ex}')
+        error = 'Произошла не критическая ошибка с определением участников в голосовм канале, теперь это не будет влиять на распределение'
         return [], error
 

@@ -108,52 +108,57 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
         user_to_event = user_to_events.fetchall()
 
     #Генерим каналы и роли для команд и запасных
-    id_channel_team_arr = ''
-    id_role_team_arr = ''
-    for channel in range(comand_count+1):
-        if channel == 0:
-            name = 'Запасные'
-        else:
-            name = f'Команда {channel}'
-        role = await ctx.guild.create_role(name=f'{event_name} {name}')
-        permission = [
-            interactions.Overwrite(
-                id=int(role.id),
-                allow=(0x0000000000000400+0x0000000000000800+0x0000000000004000+0x0000000000008000+0x0000000000040000)
-            ),
-            interactions.Overwrite(
-                id=int(bot_info.everyone_id),
-                deny=(0x0000000000000400)
-            )
-        ]
-        # Каналы прикреполенные к категории с привязкой прав
-        category_id = event[0][10]
-        text_channel = await ctx.guild.create_channel(name=name, type=interactions.ChannelType(0), permission_overwrites=permission,parent_id=int(category_id))
-        voice_channel = await ctx.guild.create_channel(name=name, type=interactions.ChannelType(2), permission_overwrites=permission,parent_id=int(category_id))
-        # Для записи в бд
-        id_channel_team_arr = id_channel_team_arr + f'{int(text_channel.id)}|' + f'{int(voice_channel.id)}|'
-        id_role_team_arr = id_role_team_arr + f'{int(role.id)}|'
-        # присвоим игрокам соответствующие роли
-        for user in user_to_event:
-            if user[3] == f'Команда {channel}':
-                member = interactions.Member(**await bot._http.get_member(member_id=int(user[0]), guild_id=ctx.guild_id), _client=bot._http)
-                await member.add_role(int(role.id), ctx.guild_id)
-            elif user[3] is None:
-                member = interactions.Member(**await bot._http.get_member(member_id=int(user[0]), guild_id=ctx.guild_id), _client=bot._http)
-                await member.add_role(int(role.id), ctx.guild_id)
-        # Отправление всех id комнат и ролей в бд
-        argx = (int(ctx.message.id),id_role_team_arr, id_channel_team_arr)
-        # Сейв в бд
-        res = execute_query('add_arr_id_to_event', argx)
-        if isinstance(res, str):
-            # Добавлять новые обнаруденые баги через if else
-            # Логирование ошибки в базу
-            argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event загрузка всех id каналов в бд', res)
-            execute_query('add_error', argx)  
-            print(res)
-            await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
-            return
-    logger_comand.debug('Создали роли и каналы для команд и раздали роли пользователям')
+    try:
+        id_channel_team_arr = ''
+        id_role_team_arr = ''
+        for channel in range(comand_count+1):
+            if channel == 0:
+                name = 'Запасные'
+            else:
+                name = f'Команда {channel}'
+            role = await ctx.guild.create_role(name=f'{event_name} {name}')
+            permission = [
+                interactions.Overwrite(
+                    id=int(role.id),
+                    allow=(0x0000000000000400+0x0000000000000800+0x0000000000004000+0x0000000000008000+0x0000000000040000)
+                ),
+                interactions.Overwrite(
+                    id=int(bot_info.everyone_id),
+                    deny=(0x0000000000000400)
+                )
+            ]
+            # Каналы прикреполенные к категории с привязкой прав
+            category_id = event[0][10]
+            text_channel = await ctx.guild.create_channel(name=name, type=interactions.ChannelType(0), permission_overwrites=permission,parent_id=int(category_id))
+            voice_channel = await ctx.guild.create_channel(name=name, type=interactions.ChannelType(2), permission_overwrites=permission,parent_id=int(category_id))
+            # Для записи в бд
+            id_channel_team_arr = id_channel_team_arr + f'{int(text_channel.id)}|' + f'{int(voice_channel.id)}|'
+            id_role_team_arr = id_role_team_arr + f'{int(role.id)}|'
+            # присвоим игрокам соответствующие роли
+            for user in user_to_event:
+                if user[3] == f'Команда {channel}':
+                    member = interactions.Member(**await bot._http.get_member(member_id=int(user[0]), guild_id=ctx.guild_id), _client=bot._http)
+                    await member.add_role(int(role.id), ctx.guild_id)
+                elif user[3] is None:
+                    member = interactions.Member(**await bot._http.get_member(member_id=int(user[0]), guild_id=ctx.guild_id), _client=bot._http)
+                    await member.add_role(int(role.id), ctx.guild_id)
+            # Отправление всех id комнат и ролей в бд
+            argx = (int(ctx.message.id),id_role_team_arr, id_channel_team_arr)
+            # Сейв в бд
+            res = execute_query('add_arr_id_to_event', argx)
+            if isinstance(res, str):
+                # Добавлять новые обнаруденые баги через if else
+                # Логирование ошибки в базу
+                argx = (int(ctx.user.id), str(ctx.channel), str(ctx.member), 'start_event загрузка всех id каналов в бд', res)
+                execute_query('add_error', argx)  
+                print(res)
+                await ctx.send('Произошла непредвиденная ошибка пожалуйста сообщите администрации', ephemeral=True)
+                return
+        logger_comand.debug('Создали роли и каналы для команд и раздали роли пользователям')
+    except Exception as ex:
+        logger_comand.warning(f'Во время генерации ролей и каналов произошла ошибка.\n Exception: {ex}')
+        await ctx.send('Во время генерации ролей и каналов произошла ошибка. Команды и роли были созданы не правильно. Работа бота не нарушена за усключением ролей и каналов для участников.', ephemeral=True)
+    
 
     # Генерим сообщение
     type, event_name, event_description = event[0][3], event[0][4], event[0][5]

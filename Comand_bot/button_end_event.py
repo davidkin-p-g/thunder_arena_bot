@@ -84,15 +84,21 @@ async def button_end_event_comand(ctx: interactions.CommandContext, bot, logger_
         await guild.delete_channel(int(id_event_text_channel))
         await guild.delete_channel(int(id_event_voice_channel))
         await guild.delete_channel(int(id_event_category_channel))
-    except:
-        await add_error(ctx, 'button_end_event', 'Неисправность удаления ролей', 'Вероятно не все роли и каналы были удалены проверьте')
+
+        logger_comand.debug('Удалили созданые роли и каналы')
+
         type, event_name, event_description = event[0][3], event[0][4], event[0][5]
         embed = startevent_end_message(type, event_name, event_description)
+        logger_comand.debug('Отправляем сообщение')
+        await ctx.message.edit(embeds=embed, components=row2)
+    except Exception as ex:
+        
+        logger_comand.warning(f'Во время удаления ролей и каналов произошла ошибка.\n Exception: {ex}')
+        await ctx.send('Во время удаления ролей и каналов произошла ошибка. Проверьте фактическое удаление каналов и ролей данного события', ephemeral=True)
+        type, event_name, event_description = event[0][3], event[0][4], event[0][5]
+        embed = startevent_end_message(type, event_name, event_description)
+
+        logger_comand.debug('Отправляем сообщение')
         await ctx.message.edit(embeds=embed, components=row2)
         return
-    logger_comand.debug('Удалили созданые роли и каналы')
-
-    type, event_name, event_description = event[0][3], event[0][4], event[0][5]
-    embed = startevent_end_message(type, event_name, event_description)
-    logger_comand.debug('Отправляем сообщение')
-    await ctx.message.edit(embeds=embed, components=row2)
+    
