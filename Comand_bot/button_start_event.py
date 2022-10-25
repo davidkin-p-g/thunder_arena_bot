@@ -5,7 +5,7 @@ import interactions
 from bd_connection import execute_query
 from message import startevent_go_message
 import bot_info
-from logging import Logger
+from logging import Logger, warning
 from Team_Comp import all_team_comp
 
 from Comand_bot.button import *
@@ -22,6 +22,9 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
     :ivar discord.Client client: дополнительный клиент запуска бота
     :ivar Logger logger_comand: Класс логера обрабочика
     '''
+    # Флаг варнинков
+    warning_comand_count = 0
+    warning_add_role = 0
     # Провека прав мембера
     # Полюбому можно лучге но я не справился
     permissions = str(ctx.member.permissions).split('|')
@@ -90,7 +93,7 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
     # Формирование команд + проверка войса
     comand_count, error = all_team_comp(user_to_event, permissions_administrator, int(ctx.message.id), client, logger_comand)
     if error != '':
-        await ctx.send(error, ephemeral=True)
+        warning_comand_count = 1
     # /Формирование команд
     logger_comand.debug('Сформировали команды')
     
@@ -156,20 +159,18 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
                 return
         logger_comand.debug('Создали роли и каналы для команд и раздали роли пользователям')
 
-        # Генерим сообщение
-        type, event_name, event_description = event[0][3], event[0][4], event[0][5]
-        embed = startevent_go_message(type, event_name, event_description)
-
-        logger_comand.debug('Отпраляем сообщение')
-        await ctx.message.edit(embeds=embed, components=row1)
-
     except Exception as ex:
         logger_comand.warning(f'Во время генерации ролей и каналов произошла ошибка.\n Exception: {ex}')
+        warning_add_role = 1
 
-        # Генерим сообщение
-        type, event_name, event_description = event[0][3], event[0][4], event[0][5]
-        embed = startevent_go_message(type, event_name, event_description)
-        logger_comand.debug('Отпраляем сообщение')
+    # Генерим сообщение
+    type, event_name, event_description = event[0][3], event[0][4], event[0][5]
+    embed = startevent_go_message(type, event_name, event_description)
+    logger_comand.debug('Отпраляем сообщение')
 
-        await ctx.message.edit(embeds=embed, components=row1)
+    await ctx.message.edit(embeds=embed, components=row1)
+    # Вывод собраных варнингов
+    if warning_comand_count == 1:
+        await ctx.send(error, ephemeral=True)
+    if warning_add_role == 1:
         await ctx.send('Во время генерации ролей и каналов произошла ошибка. Команды и роли были созданы не правильно. Работа бота не нарушена за усключением ролей и каналов для участников.', ephemeral=True)

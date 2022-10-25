@@ -19,6 +19,8 @@ async def button_end_event_comand(ctx: interactions.CommandContext, bot, logger_
     :ivar interactions.Client bot: Основной клиент запуска бота
     :ivar Logger logger_comand: Клас логера обрабочика
     '''
+     # Флаг варнинков
+    warning_delete_role = 0
     # Провека прав мембера
     # Полюбому можно лучге но я не справился
     permissions = str(ctx.member.permissions).split('|')
@@ -87,18 +89,16 @@ async def button_end_event_comand(ctx: interactions.CommandContext, bot, logger_
 
         logger_comand.debug('Удалили созданые роли и каналы')
 
-        type, event_name, event_description = event[0][3], event[0][4], event[0][5]
-        embed = startevent_end_message(type, event_name, event_description)
-        logger_comand.debug('Отправляем сообщение')
-        await ctx.message.edit(embeds=embed, components=row2)
     except Exception as ex:
-
         logger_comand.warning(f'Во время удаления ролей и каналов произошла ошибка.\n Exception: {ex}')
-        type, event_name, event_description = event[0][3], event[0][4], event[0][5]
-        embed = startevent_end_message(type, event_name, event_description)
+        warning_delete_role = 1
+    
+    # Генерим сообщение
+    type, event_name, event_description = event[0][3], event[0][4], event[0][5]
+    embed = startevent_end_message(type, event_name, event_description)
 
-        logger_comand.debug('Отправляем сообщение')
-        await ctx.message.edit(embeds=embed, components=row2)
+    logger_comand.debug('Отправляем сообщение')
+    await ctx.message.edit(embeds=embed, components=row2)
+    if warning_delete_role == 1:
         await ctx.send('Во время удаления ролей и каналов произошла ошибка. Проверьте фактическое удаление каналов и ролей данного события', ephemeral=True)
-        return
     
