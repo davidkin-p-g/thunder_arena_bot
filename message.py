@@ -262,9 +262,9 @@ def users_to_event_team_message(user_to_event, admin= False):
         for j in range(users_block_count):
             if i +j < users_count:
                 if admin:
-                    val = val + f"**{user_to_event[users_team_start][12]}** **{user_to_event[i+j][2]}**   {user_to_event[i+j][4]}({user_to_event[i+j][5]}) {user_to_event[i+j][6]}\n"
+                    val = val + f"**{user_to_event[i+j][12]}** **{user_to_event[i+j][2]}**   {user_to_event[i+j][4]}({user_to_event[i+j][5]}) {user_to_event[i+j][6]}\n"
                 else:
-                    val = val + f"**{user_to_event[users_team_start][12]}** **{user_to_event[i+j][2]}** {user_to_event[i+j][6]}\n"
+                    val = val + f"**{user_to_event[i+j][12]}** **{user_to_event[i+j][2]}** {user_to_event[i+j][6]}\n"
         field.value = val
         fields_embed.append(field)
 
