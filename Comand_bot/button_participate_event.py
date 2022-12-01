@@ -24,8 +24,11 @@ async def button_participate_event_comand(ctx: interactions.CommandContext, logg
     if user == []:
         await ctx.send('Вы еще не зарегистрированы', ephemeral=True)
         return
+    # Проверка на баны
+    if user[0][9] == 1:
+        await ctx.send('Вы получили бан. Подробнее команда /me', ephemeral=True)
+        return
     logger_comand.debug('Проверен пользователь')
-
     # Проверяем на изменение Discord имени
     if ctx.author.name != user[0][10]:
         # Полученные пареметры

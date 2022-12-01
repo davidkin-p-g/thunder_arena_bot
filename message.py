@@ -93,9 +93,16 @@ def me_message(user_events):
                     value=f"{event}",
                     inline=False,
                 )
-
+    # Поле с баном
+    field3 = interactions.EmbedField(
+                    name="Вы били забанены.",
+                    value=f"Причина: {user_event[17]}",
+                    inline=False,
+                )
     fields_embed.append(field1)
     fields_embed.append(field2)
+    if user_event[16] == 1:
+        fields_embed.append(field3)
     embed = interactions.Embed(
             color=0x344059,
             title=f"ME",
@@ -274,6 +281,60 @@ def users_to_event_team_message(user_to_event, admin= False):
             description=f"Всего участников: {users_count}",
             footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации.\nСписок может быть не полным если количество участников больше 125.\nПишем ботов. По вопросам @Suglinca#6900"),
             fields=fields_embed,
+    )
+    message = embed
+    return message
+
+# Ban
+def ban_message(author, discord_name, reason):
+    embed = interactions.Embed(
+            color=0xff0000,
+            title=f"Пользователь получил БАН",
+            footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации\nПишем ботов. По вопросам @Suglinca#6900"),
+            fields=[
+                interactions.EmbedField(
+                name="Пользователь",
+                value=f"{discord_name}",
+                inline=True,
+                ),
+                interactions.EmbedField(
+                name="Причина",
+                value=f"{reason}",
+                inline=True,
+                ),
+                interactions.EmbedField(
+                name="Инициатор",
+                value=f"{author}",
+                inline=True,
+                )
+            ],
+    )
+    message = embed
+    return message
+
+# Ban
+def unban_message(author, discord_name, reason):
+    embed = interactions.Embed(
+            color=0x11ff00,
+            title=f"Пользователь получил РАЗБАН",
+            footer= interactions.EmbedFooter(text="По всем вопросам обращаться к администрации\nПишем ботов. По вопросам @Suglinca#6900"),
+            fields=[
+                interactions.EmbedField(
+                name="Пользователь",
+                value=f"{discord_name}",
+                inline=True,
+                ),
+                interactions.EmbedField(
+                name="Причина",
+                value=f"{reason}",
+                inline=True,
+                ),
+                interactions.EmbedField(
+                name="Инициатор",
+                value=f"{author}",
+                inline=True,
+                )
+            ],
     )
     message = embed
     return message

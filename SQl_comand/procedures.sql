@@ -59,7 +59,7 @@ BEGIN
 END//
 
 -- Проверка
--- call check_user(178963010751168512, 'asd')
+-- call check_user(178963010751168512)
 
 DELIMITER //
 CREATE PROCEDURE check_user_to_me (in id_user bigint) 
@@ -300,7 +300,8 @@ COMMENT 'информация о пользователе'
 BEGIN 
 SELECT u.id, u.user_name, u.rating, u.rating_value, u.role_1, u.role_2, u.role_3, u.role_4, u.role_5, u.discord_name,
 e.id, e.event_name, team, role, status,
-(DATE(e.date_start)-DATE(now()))*86400  + (HOUR(e.date_start)-HOUR(now()))*3600 + (MINUTE(e.date_start)-MINUTE(now()))*60 + (SECOND(e.date_start) - SECOND(now())) as sec
+(DATE(e.date_start)-DATE(now()))*86400  + (HOUR(e.date_start)-HOUR(now()))*3600 + (MINUTE(e.date_start)-MINUTE(now()))*60 + (SECOND(e.date_start) - SECOND(now())) as sec,
+u.ban, u.reason
 FROM users as u
 left JOIN event_to_users as eu on eu.id_user = u.id
 left JOIN events as e on eu.id_event = e.id
@@ -316,7 +317,7 @@ DETERMINISTIC
 SQL SECURITY DEFINER 
 COMMENT 'Проверка всех регистрированных на событие пользователей' 
 BEGIN         
-SELECT u.id, e.event_name, u.user_name, u.rating, u.role_1, u.role_2, u.role_3, u.role_4, u.role_5, e.id_event_voice_channel
+SELECT u.id, e.event_name, u.user_name, u.rating, u.role_1, u.role_2, u.role_3, u.role_4, u.role_5, e.id_event_voice_channel, u.discord_name
 FROM event_to_users as eu 
 JOIN users as u on eu.id_user = u.id
 JOIN events as e on eu.id_event = e.id
@@ -324,7 +325,7 @@ WHERE id_event = id_ev;
 END//
 
 -- Проверка
--- call all_user_to_event(1009281495585800274)
+-- call all_user_to_event_new(1033765113095794718)
 
 
 DELIMITER //
@@ -334,7 +335,7 @@ DETERMINISTIC
 SQL SECURITY DEFINER 
 COMMENT 'Проверка всех регистрированных на событие пользователей по командам' 
 BEGIN         
-SELECT u.id, e.event_name, u.user_name, team, u.rating, u.rating_value, role
+SELECT u.id, e.event_name, u.user_name, team, u.rating, u.rating_value, role, u.role_1, u.role_2, u.role_3, u.role_4, u.role_5, u.discord_name
 FROM event_to_users as eu 
 JOIN users as u on eu.id_user = u.id
 JOIN events as e on eu.id_event = e.id
@@ -343,7 +344,7 @@ ORDER BY team;
 END//
 
 -- Проверка
--- call all_user_to_event_team(1009310514985324627)
+-- call all_user_to_event_team_new(1033765113095794718)
 
 DELIMITER //
 CREATE PROCEDURE add_arr_id_to_event (id_event bigint , id_role_team_arr varchar(5000), id_channel_team_arr varchar(5000)) 
@@ -356,3 +357,23 @@ BEGIN
     SET id_role_team_arr = id_role_team_arr , id_channel_team_arr = id_channel_team_arr
 	WHERE id = id_event;
 END//
+
+DELIMITER //
+CREATE PROCEDURE edit_ban (discord_name_user varchar(100), reason varchar(500), ban TINYINT(1) ) 
+LANGUAGE SQL 
+DETERMINISTIC 
+SQL SECURITY DEFINER 
+COMMENT 'Изменение параметра бана пользователя' 
+BEGIN 
+	DECLARE count_check INT;         
+	SET count_check = (SELECT count(*) FROM users where discord_name = discord_name_user);
+	IF ( count_check = 0) THEN
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'Нет такого пользователя';
+	END IF;
+	UPDATE users
+    SET ban = ban, reason = reason
+	WHERE discord_name = discord_name_user;
+END//
+-- Проверка
+-- call edit_ban('ksdjf', "вап", 1)

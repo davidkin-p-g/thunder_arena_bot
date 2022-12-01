@@ -64,7 +64,7 @@ async def button_start_event_comand(ctx: interactions.CommandContext, bot, clien
         # Логирование ошибки в базу
         await add_error(ctx, 'button_start_event', res, bot_info.Erorr_message_standart)
         return
-    logger_comand.debug('Изменили стату события')
+    logger_comand.debug('Изменили статус события')
 
     # Полученные пареметры
     argx = (int(ctx.message.id),)

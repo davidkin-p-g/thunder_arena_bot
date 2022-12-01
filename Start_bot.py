@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import interactions
-from interactions.ext.files import command_send
 import discord
-from threading import Thread, Event
 
 from time import sleep
 import asyncio
@@ -43,6 +41,7 @@ from Comand_bot.button_start_event import button_start_event_comand
 from Comand_bot.button_end_event import button_end_event_comand
 from Comand_bot.button_participate_event_check_team import button_participate_event_check_team_comand
 from Comand_bot.send_log import send_log_comand
+from Comand_bot.ban_member import ban_member_comand
 
 #Файлы обрабочика ошибок
 from Comand_bot.add_error import add_error
@@ -320,13 +319,54 @@ async def send_log(ctx: interactions.CommandContext):
         await add_error(ctx, 'send_log', str(ex), bot_info.Erorr_message_standart)
 
 
+@bot.command(
+    name = 'ban_member',
+    description= 'Запрет пользователю учавствовать в событии',
+    #default_member_permissions= interactions.Permissions.ADMINISTRATOR,
+    options=options_ban_member
+)
+async def ban_member(ctx: interactions.CommandContext, discord_name, reason):
+
+    try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        bot_info.comand_dict['ban_member'][0]  += 1
+        # Функционал команды
+        await ban_member_comand(ctx, discord_name, reason, logger_comand, 1)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+    except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        bot_info.comand_dict['error'][0]  += 1
+        # Логирование ошибки в базу
+        await add_error(ctx, 'ban_member', str(ex), bot_info.Erorr_message_standart)
+
+@bot.command(
+    name = 'unban_member',
+    description= 'Разрешение пользователю учавствовать в событии',
+    default_member_permissions= interactions.Permissions.ADMINISTRATOR,
+    options=options_ban_member
+)
+async def unban_member(ctx: interactions.CommandContext, discord_name, reason):
+
+    try:
+        logger_bot_component_start.info(f'Зпущен компонент id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+        bot_info.comand_dict['unban_member'][0]  += 1
+        # Функционал команды
+        await ban_member_comand(ctx, discord_name, reason, logger_comand, 0)
+        logger_bot_component_end.info(f'Компонент успешно завершен id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)}')
+    except Exception as ex:
+        logger_bot_component_end.error(f'ER Компонент завершен с ошибкой id_user: {int(ctx.user.id)}, discord_name: {str(ctx.member)} \n Exception: {ex}')
+        bot_info.comand_dict['error'][0]  += 1
+        # Логирование ошибки в базу
+        await add_error(ctx, 'unban_member', str(ex), bot_info.Erorr_message_standart)
+
+
 
 
 # Временный блок
 @bot.command(
     name = 'add_member_role',
     description= 'Админская команда для выдачи всем участникам зареганым в боте роли',
-    default_member_permissions= interactions.Permissions.ADMINISTRATOR
+    default_member_permissions= interactions.Permissions.ADMINISTRATOR,
 )
 async def add_member_role(ctx: interactions.CommandContext):
     # Получаем users

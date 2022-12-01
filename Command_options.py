@@ -253,3 +253,33 @@ options_start_event=[
             required=True,
         ),
     ]
+
+options_ban_member=[
+    interactions.Option(
+        name='discord_name',
+        description = 'Discord name пользователя',
+        type=interactions.OptionType.STRING,
+        required=True,
+    ),
+    interactions.Option(
+            name='reason',
+            description = 'Причина бана',
+            type=interactions.OptionType.STRING,
+            required=True,
+        )
+    ]
+
+options_unban_member=[
+    interactions.Option(
+        name='discord_name',
+        description = 'Discord name пользователя',
+        type=interactions.OptionType.STRING,
+        required=True,
+    ),
+    interactions.Option(
+            name='reason',
+            description = 'Причина разбана',
+            type=interactions.OptionType.STRING,
+            required=True,
+        )
+    ]
