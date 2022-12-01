@@ -25,9 +25,9 @@ async def send_log_comand(ctx: interactions.CommandContext = None, logger_comand
         logger_comand.debug('Сгенерировали результырующий лог')
 
     # Создаем пустые фалы для передачи лога
-    with open(f'Bot_all_log_{date.today()}.txt', 'tw', encoding='utf-8') as f:
+    with open(f'Bot_all_log_{date.today()}.log', 'tw', encoding='utf-8') as f:
         pass
-    with open(f'Bot_result_log_{date.today()}.txt', 'tw', encoding='utf-8') as f:
+    with open(f'Bot_result_log_{date.today()}.log', 'tw', encoding='utf-8') as f:
         pass
     if logger_comand is not None:
         logger_comand.debug('Создали дубляры файлов')
