@@ -68,6 +68,8 @@ comand_dict = {
     'error':[0, 0, 'Ошибки']
 }
 
+# Разброс 
+scatter = 0.20
 # ЭТО ЛЕГЕНТААААААААААА
 # member = interactions.Member(**await bot._http.get_member(member_id=int(users[0][0]), guild_id=663569174831824948), _client=bot._http)
 # ЭТО ЛЕГЕНТААААААААААА

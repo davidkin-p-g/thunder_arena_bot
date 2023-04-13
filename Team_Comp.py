@@ -4,6 +4,7 @@ import json
 import random
 import time
 import copy
+from bot_info import scatter
 from logging import Logger
 
 from bd_connection import execute_query
@@ -11,6 +12,8 @@ from bd_connection import execute_query
 from discordpy import check_memeber_voice
 
 def team_comp_def(user_to_event, missing_memeber):
+    # Процент разброса команд 
+    scatter_center = scatter / 2
     # fh = open(db_name, 'r', encoding='utf-8')  # Заменить на db_name
     # DataBase = json.load(fh)
     # fh.close()
@@ -173,10 +176,10 @@ def team_comp_def(user_to_event, missing_memeber):
         timeout_start = time.time()
         # print(flag)
         # print(role_comp['Топ'])
-        # print(role_comp_save['Топ'])
+        print(f'scatter -> {scatter_center}')
         while len(team_comp) < Comand:
             reit = 0
-            while not (Sr_reit_team - 0.1 * Sr_reit_team < reit < Sr_reit_team + 0.1 * Sr_reit_team):
+            while not (Sr_reit_team - scatter_center * Sr_reit_team < reit < Sr_reit_team + scatter_center   * Sr_reit_team):
                 # print(time.time(), timeout_start + timeout)
                 # Генерю команду
                 reit = 0

@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:x="urn:schemas-microsoft-com:office:excel"
+xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+xmlns:html="http://www.w3.org/TR/REC-html40">
+<Worksheet ss:Name="Table1">
+	<Table>
+		<Column ss:Index="1" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="2" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Column ss:Index="3" ss:AutoFitWidth="0" ss:Width="110"/>
+		<Row>
+			<Cell><Data ss:Type="String">discord_name</Data></Cell>
+			<Cell><Data ss:Type="String">user_name</Data></Cell>
+			<Cell><Data ss:Type="String">rating</Data></Cell>
+		</Row>
+
+		<Row>
+			<Cell><Data ss:Type="String">mexanic21</Data></Cell>
+			<Cell><Data ss:Type="String">Fabio</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Null</Data></Cell>
+			<Cell><Data ss:Type="String">Yoo Seung Ho</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">f0lloVVmE</Data></Cell>
+			<Cell><Data ss:Type="String">Genja007</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">FerociousBear (Саня)</Data></Cell>
+			<Cell><Data ss:Type="String">FerociousBear</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Rínoa</Data></Cell>
+			<Cell><Data ss:Type="String">Jävla</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">𝕰𝖑 𝕿𝖎𝖌𝖗𝖊</Data></Cell>
+			<Cell><Data ss:Type="String">МЯУМЯУС</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">IRifeoRI</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Skleon</Data></Cell>
+			<Cell><Data ss:Type="String">Skleon</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">slooow</Data></Cell>
+			<Cell><Data ss:Type="String">джанглер виноват</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Yumi</Data></Cell>
+			<Cell><Data ss:Type="String">Юми</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Suglinca</Data></Cell>
+			<Cell><Data ss:Type="String">asdfgh</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Кот-колдун</Data></Cell>
+			<Cell><Data ss:Type="String">AsherPaws</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">korobka korobka</Data></Cell>
+			<Cell><Data ss:Type="String">korobka korobka</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ImNikita</Data></Cell>
+			<Cell><Data ss:Type="String">Budget Bwipo</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Xas</Data></Cell>
+			<Cell><Data ss:Type="String">Xas</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">s7ptemberDGAF</Data></Cell>
+			<Cell><Data ss:Type="String">kak regnutxasa</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ザンカ・ニジク</Data></Cell>
+			<Cell><Data ss:Type="String">aomine pos5</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Irukan</Data></Cell>
+			<Cell><Data ss:Type="String">Irukandji1337</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">💔只是Jok</Data></Cell>
+			<Cell><Data ss:Type="String">GrandGad</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Aurora Watch</Data></Cell>
+			<Cell><Data ss:Type="String">INNI Aurora</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">GReaper 🌏</Data></Cell>
+			<Cell><Data ss:Type="String">lGReaperl</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Ромчик</Data></Cell>
+			<Cell><Data ss:Type="String">Ромчик</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ZalmanZ9Plus</Data></Cell>
+			<Cell><Data ss:Type="String">Дёня Животное</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">пескуа</Data></Cell>
+			<Cell><Data ss:Type="String">андрейначалпеть</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Klinny</Data></Cell>
+			<Cell><Data ss:Type="String">Klinny its me</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Murr</Data></Cell>
+			<Cell><Data ss:Type="String">MurrTho</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Конская палка Соны</Data></Cell>
+			<Cell><Data ss:Type="String">SeveR31</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Spokoinoy Nochi</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Himeera</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">IRiseMoon</Data></Cell>
+			<Cell><Data ss:Type="String">IRiseMoon</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Sgt Koluchka</Data></Cell>
+			<Cell><Data ss:Type="String">Арапакати</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Elektrixxx</Data></Cell>
+			<Cell><Data ss:Type="String">ЛЁХА ЭМОБОЙЧИК</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Murrmuar</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Shangrilla</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Senpai</Data></Cell>
+			<Cell><Data ss:Type="String">Boidou</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">balberchik</Data></Cell>
+			<Cell><Data ss:Type="String">balberchik</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Adonis</Data></Cell>
+			<Cell><Data ss:Type="String">Adonis</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Dlich</Data></Cell>
+			<Cell><Data ss:Type="String">yаbloko</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Enfunsion</Data></Cell>
+			<Cell><Data ss:Type="String">Enfunsion</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">MrKaisеr</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ShockerFace</Data></Cell>
+			<Cell><Data ss:Type="String">ShоckerFace</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Deus Vult</Data></Cell>
+			<Cell><Data ss:Type="String">G2 Hentai Ornn</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Fad3Rn</Data></Cell>
+			<Cell><Data ss:Type="String">Fad3Rn</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Kronkvo</Data></Cell>
+			<Cell><Data ss:Type="String">Sarkaras</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">hobik</Data></Cell>
+			<Cell><Data ss:Type="String">hobik</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Murrriya</Data></Cell>
+			<Cell><Data ss:Type="String">Leorinn</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">( ˘⌣˘)♡(˘⌣˘ )</Data></Cell>
+			<Cell><Data ss:Type="String">ени крута</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Die</Data></Cell>
+			<Cell><Data ss:Type="String">тВоЯ КиСуЛя 228</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Чел справа гeй </Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">RCT Reaper</Data></Cell>
+			<Cell><Data ss:Type="String">RCT Reaper</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Еж Сатана</Data></Cell>
+			<Cell><Data ss:Type="String">еж сатанa</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Kiribatti</Data></Cell>
+			<Cell><Data ss:Type="String">heelbeer</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Pomka</Data></Cell>
+			<Cell><Data ss:Type="String">INNI Choppa</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">ULTIMATIVE SVETA</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">darinka</Data></Cell>
+			<Cell><Data ss:Type="String">KotenocheK</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Рома (R I K O)(Sup)</Data></Cell>
+			<Cell><Data ss:Type="String">R I K O</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">SU1CIDAL</Data></Cell>
+			<Cell><Data ss:Type="String">SU1CIDAL</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Тётя Шиза</Data></Cell>
+			<Cell><Data ss:Type="String">Венлафаксин</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">''</Data></Cell>
+			<Cell><Data ss:Type="String">ColetteYi</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">netnom</Data></Cell>
+			<Cell><Data ss:Type="String">ValmarxTobias</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Stick2g</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">RiadX(The End)</Data></Cell>
+			<Cell><Data ss:Type="String">NotNewX</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Percival(Андрей)</Data></Cell>
+			<Cell><Data ss:Type="String">Percival play</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Ненaвижу людей</Data></Cell>
+			<Cell><Data ss:Type="String">МurМur</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">DragonDolbik</Data></Cell>
+			<Cell><Data ss:Type="String">Dragon of Shadow</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ThrallSoD</Data></Cell>
+			<Cell><Data ss:Type="String">INNI Mage</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">EOSAriz</Data></Cell>
+			<Cell><Data ss:Type="String">KeNaNFoR</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">toshaebosha</Data></Cell>
+			<Cell><Data ss:Type="String">qwentxxx</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">BanKuYi ded</Data></Cell>
+			<Cell><Data ss:Type="String">BanKuYi ded</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Well</Data></Cell>
+			<Cell><Data ss:Type="String">Well</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">YonneOneLove</Data></Cell>
+			<Cell><Data ss:Type="String">YonneOneLove</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">FarseerKarma</Data></Cell>
+			<Cell><Data ss:Type="String">Trinityfley</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">cadet1 ru</Data></Cell>
+			<Cell><Data ss:Type="String">cadet1 ru</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">INNI Blade</Data></Cell>
+			<Cell><Data ss:Type="String">IWantMyBlade</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">w8 im fcking bad</Data></Cell>
+			<Cell><Data ss:Type="String">w8 im fcking bad</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">m_noize</Data></Cell>
+			<Cell><Data ss:Type="String">INNI Lacerta</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">reptiloid</Data></Cell>
+			<Cell><Data ss:Type="String">Bemonsak</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Arhifant</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Sterben9</Data></Cell>
+			<Cell><Data ss:Type="String">sSkEeMm</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">lane diff xd</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Balvd</Data></Cell>
+			<Cell><Data ss:Type="String">Василь соляра</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">KaiSas</Data></Cell>
+			<Cell><Data ss:Type="String">KaiSas</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ufys</Data></Cell>
+			<Cell><Data ss:Type="String">ufys</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Ахмад Гази</Data></Cell>
+			<Cell><Data ss:Type="String">Ахмад Гази </Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Shtarmagedon</Data></Cell>
+			<Cell><Data ss:Type="String">Shtarmagedon</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Haul</Data></Cell>
+			<Cell><Data ss:Type="String">Hentai Shaco</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Серж</Data></Cell>
+			<Cell><Data ss:Type="String">subliritum</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Don_Koval</Data></Cell>
+			<Cell><Data ss:Type="String">DonKoval</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Лаймик</Data></Cell>
+			<Cell><Data ss:Type="String">Liminality</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Принцесса Франца</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">ALT F4 PIG</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Я Календарь</Data></Cell>
+			<Cell><Data ss:Type="String">супертащер228</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">sasat bush</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Жижа</Data></Cell>
+			<Cell><Data ss:Type="String">K1ndred</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">черный пояс по куни</Data></Cell>
+			<Cell><Data ss:Type="String">меня бьет папа</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Jugashka</Data></Cell>
+			<Cell><Data ss:Type="String">Jugashka btw</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">MonsTer WaifU</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">ени крута</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">rebenok</Data></Cell>
+			<Cell><Data ss:Type="String">YATAGARASUXD</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">6ix9ineKizaru</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">D?</Data></Cell>
+			<Cell><Data ss:Type="String">Rafinaks</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Doctro</Data></Cell>
+			<Cell><Data ss:Type="String">AtsumuMiya</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Rakka</Data></Cell>
+			<Cell><Data ss:Type="String">jg diff</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TILTDA</Data></Cell>
+			<Cell><Data ss:Type="String">Илюха Протобелт</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Jar Jar Binks</Data></Cell>
+			<Cell><Data ss:Type="String">ЕvilFох</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">D.D.</Data></Cell>
+			<Cell><Data ss:Type="String">danru</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">одинокая вайфу...</Data></Cell>
+			<Cell><Data ss:Type="String">ZXC X ZЕD</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Unlucka</Data></Cell>
+			<Cell><Data ss:Type="String">Idkie</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">DeathMamay</Data></Cell>
+			<Cell><Data ss:Type="String">DeathMamay</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Batrosha</Data></Cell>
+			<Cell><Data ss:Type="String">Vatroosha</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ПЇЪРО́Ф</Data></Cell>
+			<Cell><Data ss:Type="String">PIYROF</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Wolf Frakken</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Ignat</Data></Cell>
+			<Cell><Data ss:Type="String">Choc0 PIe</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Sobaka(musor1dz3)</Data></Cell>
+			<Cell><Data ss:Type="String">musor1dz3</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">tutupapatutu</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">LAIMPOP</Data></Cell>
+			<Cell><Data ss:Type="String">LAIMPOP</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Dii</Data></Cell>
+			<Cell><Data ss:Type="String">Dii</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Кусочек Пиццы</Data></Cell>
+			<Cell><Data ss:Type="String">Spase For U</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">NAriKanO</Data></Cell>
+			<Cell><Data ss:Type="String">NAriKanO</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Effex0</Data></Cell>
+			<Cell><Data ss:Type="String">Effex0</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Yogan</Data></Cell>
+			<Cell><Data ss:Type="String">OWRLx12</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">autistiolip</Data></Cell>
+			<Cell><Data ss:Type="String">МамеПриветУе60к</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">BŁÌTIIIZø</Data></Cell>
+			<Cell><Data ss:Type="String">n9wlord</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Deimos</Data></Cell>
+			<Cell><Data ss:Type="String">TSR Deimos</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">FlameNitor</Data></Cell>
+			<Cell><Data ss:Type="String">FlameNitor</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Axeya</Data></Cell>
+			<Cell><Data ss:Type="String">GEO Im Leo</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">MavicKe1</Data></Cell>
+			<Cell><Data ss:Type="String">MavicKe1</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Rebgenloth</Data></Cell>
+			<Cell><Data ss:Type="String">XZePokin</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Jalader</Data></Cell>
+			<Cell><Data ss:Type="String">Jalader</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Medved0510</Data></Cell>
+			<Cell><Data ss:Type="String">Medved0510</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">NeoFox</Data></Cell>
+			<Cell><Data ss:Type="String">NeoFox</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Zeru</Data></Cell>
+			<Cell><Data ss:Type="String">Zeru</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Yann</Data></Cell>
+			<Cell><Data ss:Type="String">Kisaragii</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Pisces</Data></Cell>
+			<Cell><Data ss:Type="String">Mehira</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Toki</Data></Cell>
+			<Cell><Data ss:Type="String">pizsda</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TWINkie43</Data></Cell>
+			<Cell><Data ss:Type="String">RETURN ТО MONKE</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">MIDIDIDIDIDTKA</Data></Cell>
+			<Cell><Data ss:Type="String">MIDIDIDIDIDIDKA</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Dealife</Data></Cell>
+			<Cell><Data ss:Type="String">Dealife</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">XNar0X</Data></Cell>
+			<Cell><Data ss:Type="String">YoriichiHashira</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">k3trin</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Твоя Пошласть</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">badanuk</Data></Cell>
+			<Cell><Data ss:Type="String">Bakron</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">MOODSsasori</Data></Cell>
+			<Cell><Data ss:Type="String">nvermore</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">FoggyFroggy</Data></Cell>
+			<Cell><Data ss:Type="String">DollyNyan</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">polhengt</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Parl1k( Димас)</Data></Cell>
+			<Cell><Data ss:Type="String">MeaT1989</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ДИТЯ ВЕТРОВ</Data></Cell>
+			<Cell><Data ss:Type="String">ДИТЯ ВЕТРОВ</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ledocainedd</Data></Cell>
+			<Cell><Data ss:Type="String">ledocainedd</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Skeler</Data></Cell>
+			<Cell><Data ss:Type="String">Eto malooyybtw</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">drebzilla</Data></Cell>
+			<Cell><Data ss:Type="String">игнат семёнов</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Venom</Data></Cell>
+			<Cell><Data ss:Type="String">IWeAreVenomI</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Polhen</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">morceau </Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Just Madness Geza</Data></Cell>
+			<Cell><Data ss:Type="String">Geza</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">mexanic21</Data></Cell>
+			<Cell><Data ss:Type="String">Аларик</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">DED Insane</Data></Cell>
+			<Cell><Data ss:Type="String">DED Insane</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">depressed kid L9</Data></Cell>
+			<Cell><Data ss:Type="String">depressed king</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Milkka</Data></Cell>
+			<Cell><Data ss:Type="String">Milka02</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">павтьдолавть</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">VeoRomi</Data></Cell>
+			<Cell><Data ss:Type="String">VeoRomi</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Dnz</Data></Cell>
+			<Cell><Data ss:Type="String">Nae6kaDl9Uebka</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Точно не Шрек</Data></Cell>
+			<Cell><Data ss:Type="String">Точно не Шрек</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">𝓨𝓾𝓷𝓪</Data></Cell>
+			<Cell><Data ss:Type="String">3efir</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Биба плыл по морю...</Data></Cell>
+			<Cell><Data ss:Type="String">Retrypal</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ЛичСладкоежка</Data></Cell>
+			<Cell><Data ss:Type="String">ПадшийЛич</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">전체 제로</Data></Cell>
+			<Cell><Data ss:Type="String">Fu11 Zеr0</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">snowman99</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">𝒯𝑜𝓍𝒾𝒸𝒟𝑅𝒜𝒱𝐸𝒩</Data></Cell>
+			<Cell><Data ss:Type="String">ToxicDRAVEN </Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">NickyyTSK</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">KоgMeоw</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">lekkek</Data></Cell>
+			<Cell><Data ss:Type="String">lekkek</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Tiranda Kin</Data></Cell>
+			<Cell><Data ss:Type="String">Tiranda Kin </Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Intel13</Data></Cell>
+			<Cell><Data ss:Type="String">Intel13</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TSR Dumbеst</Data></Cell>
+			<Cell><Data ss:Type="String">TSR Dumbеst</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Rin Itoshi</Data></Cell>
+			<Cell><Data ss:Type="String">L9 No meaning</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">KryghowniK Tárrø</Data></Cell>
+			<Cell><Data ss:Type="String">KryghowniK Tárrø</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Daralont</Data></Cell>
+			<Cell><Data ss:Type="String">Daralont</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">alcreamie</Data></Cell>
+			<Cell><Data ss:Type="String">Celandien</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TiF0Rm</Data></Cell>
+			<Cell><Data ss:Type="String">nosleepneediT</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Murk Wolf</Data></Cell>
+			<Cell><Data ss:Type="String">Murk Wolf</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Киллер Кринж</Data></Cell>
+			<Cell><Data ss:Type="String">Оливка Сайкса</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Tfas</Data></Cell>
+			<Cell><Data ss:Type="String">Fushi</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">SKiner</Data></Cell>
+			<Cell><Data ss:Type="String">SKiner1525</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Galabibop</Data></Cell>
+			<Cell><Data ss:Type="String">CPS Galabalab</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">LOUD LORD</Data></Cell>
+			<Cell><Data ss:Type="String">perevertina</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">babulehs fart</Data></Cell>
+			<Cell><Data ss:Type="String">babulehs fart</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Crimson Ripper</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Любитель турелик</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">nevmute</Data></Cell>
+			<Cell><Data ss:Type="String">poso see</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">sheesh adc</Data></Cell>
+			<Cell><Data ss:Type="String">Demetra Berkut</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">НЕ НИКО / Даниил</Data></Cell>
+			<Cell><Data ss:Type="String">НЕ НИКО</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Aleksаныч</Data></Cell>
+			<Cell><Data ss:Type="String">myLEDYDEATHовца</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">proxy</Data></Cell>
+			<Cell><Data ss:Type="String">qum3rry</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">𝕸𝓲𝒌𝒌ẵ𝒎</Data></Cell>
+			<Cell><Data ss:Type="String">0mikkam0</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TeleK</Data></Cell>
+			<Cell><Data ss:Type="String">TeleK228</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Emperor Firuz</Data></Cell>
+			<Cell><Data ss:Type="String">Emperor Firuz</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Gafinhord</Data></Cell>
+			<Cell><Data ss:Type="String">Gafinhord</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">губка боб</Data></Cell>
+			<Cell><Data ss:Type="String">NewRabbit</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Dreikerien</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">𝙽𝚎𝚘𝚗 𝚂𝚞𝚗𝚕𝚒𝚐𝚑𝚝</Data></Cell>
+			<Cell><Data ss:Type="String">Kitsunamii</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">L1rozet</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TechnoMouse</Data></Cell>
+			<Cell><Data ss:Type="String">TechnoMouse</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Maestro</Data></Cell>
+			<Cell><Data ss:Type="String">Mae51r0</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Милая Кицу</Data></Cell>
+			<Cell><Data ss:Type="String">Милый кицу</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">DDGOD</Data></Cell>
+			<Cell><Data ss:Type="String">DDGOD09</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Unbroken Kaito</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">T_karter</Data></Cell>
+			<Cell><Data ss:Type="String">ADAM HA4EY</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">samyraii</Data></Cell>
+			<Cell><Data ss:Type="String">ПапаСкрепыш</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">DixenFive</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">rdw1</Data></Cell>
+			<Cell><Data ss:Type="String">rdw1</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TecPan</Data></Cell>
+			<Cell><Data ss:Type="String">TecPan</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">БогатаяЛеSбиянка</Data></Cell>
+			<Cell><Data ss:Type="String">БогатаяЛеSбиянка</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">vaness </Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">руля</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Sir</Data></Cell>
+			<Cell><Data ss:Type="String">Хинкаль</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Bandiiit</Data></Cell>
+			<Cell><Data ss:Type="String">Bandiiit</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">꧁❀MENTOL❀꧂</Data></Cell>
+			<Cell><Data ss:Type="String">MENTØL</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TBlard ツ    ║PoppyMain}--</Data></Cell>
+			<Cell><Data ss:Type="String">MyPoppy</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Yadda</Data></Cell>
+			<Cell><Data ss:Type="String">Yaddа</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Шланг Цунг</Data></Cell>
+			<Cell><Data ss:Type="String">Ugandan</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TerRUbt</Data></Cell>
+			<Cell><Data ss:Type="String">TerRUbt</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">moonrxze</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Warleggen</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Kokushibo</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Dingo1519</Data></Cell>
+			<Cell><Data ss:Type="String">Dingo1519</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">wanna de chalandger</Data></Cell>
+			<Cell><Data ss:Type="String">Mundotherapy</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">R4D1O</Data></Cell>
+			<Cell><Data ss:Type="String">R4D1ON</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">w8 ur fcking bad</Data></Cell>
+			<Cell><Data ss:Type="String">CoinflipKatahri</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">eatmean</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">mirari</Data></Cell>
+			<Cell><Data ss:Type="String">трусики cамиры</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">dop</Data></Cell>
+			<Cell><Data ss:Type="String">seevaligfor</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ванюша</Data></Cell>
+			<Cell><Data ss:Type="String">akiyama</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">realneilcicierega</Data></Cell>
+			<Cell><Data ss:Type="String">horny for kayn</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Zerma</Data></Cell>
+			<Cell><Data ss:Type="String">Zerma</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">plaiyngwithdolls</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Flaivy</Data></Cell>
+			<Cell><Data ss:Type="String">Flaivy</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">RashnLight</Data></Cell>
+			<Cell><Data ss:Type="String">RashnLight</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Argus878787</Data></Cell>
+			<Cell><Data ss:Type="String">Argus878787</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">MURA</Data></Cell>
+			<Cell><Data ss:Type="String">BpaTuLLl</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">KAYOSHI</Data></Cell>
+			<Cell><Data ss:Type="String">KAYORI ONI</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Артёмка не гей</Data></Cell>
+			<Cell><Data ss:Type="String">Финн Пaрнишкa</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Fallen649</Data></Cell>
+			<Cell><Data ss:Type="String">Fallen649</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TiranPupka</Data></Cell>
+			<Cell><Data ss:Type="String">TiranPupka</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">XxDinos</Data></Cell>
+			<Cell><Data ss:Type="String">XxDinos</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">w0nderfulman</Data></Cell>
+			<Cell><Data ss:Type="String">w0nderfulman</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">abs0lute //</Data></Cell>
+			<Cell><Data ss:Type="String">bLo0d</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Gientos</Data></Cell>
+			<Cell><Data ss:Type="String">Fantom078</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">RobiNN</Data></Cell>
+			<Cell><Data ss:Type="String">Душное Чудовище</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Bloodluckcion</Data></Cell>
+			<Cell><Data ss:Type="String">Bloodluckcion</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Jostkiy(mx)</Data></Cell>
+			<Cell><Data ss:Type="String">ForenP</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">лимонный швепс</Data></Cell>
+			<Cell><Data ss:Type="String">лимонный швепс</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">тихоня</Data></Cell>
+			<Cell><Data ss:Type="String">тихоня</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Yato</Data></Cell>
+			<Cell><Data ss:Type="String">Negative IQ Yato</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Demonadc L9</Data></Cell>
+			<Cell><Data ss:Type="String">Demonadc</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">владимир</Data></Cell>
+			<Cell><Data ss:Type="String">0kubel</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">манекен</Data></Cell>
+			<Cell><Data ss:Type="String">манекен</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">FLollipop</Data></Cell>
+			<Cell><Data ss:Type="String">FLollipop</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Макс Jagger</Data></Cell>
+			<Cell><Data ss:Type="String">Jagger Swaggеr</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">EliZion</Data></Cell>
+			<Cell><Data ss:Type="String">VerbZ</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Vovich</Data></Cell>
+			<Cell><Data ss:Type="String">LuzhaZhizhi</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Goat</Data></Cell>
+			<Cell><Data ss:Type="String">kempachiikun</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Pillom</Data></Cell>
+			<Cell><Data ss:Type="String">PorosenokPeitr</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Твой Папаша</Data></Cell>
+			<Cell><Data ss:Type="String">Твой Папаша</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TheKillStealer</Data></Cell>
+			<Cell><Data ss:Type="String">НеХватка Нежити</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Nantomo</Data></Cell>
+			<Cell><Data ss:Type="String">1Nantomo1</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Hide in trench</Data></Cell>
+			<Cell><Data ss:Type="String">Hide in trench</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">COBRА</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Джун младший</Data></Cell>
+			<Cell><Data ss:Type="String">QuNL</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">magic_angell</Data></Cell>
+			<Cell><Data ss:Type="String">bombomtic</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Kharn</Data></Cell>
+			<Cell><Data ss:Type="String">DeusShenganian</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Enfunsion1</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">10 арена клеш рояль</Data></Cell>
+			<Cell><Data ss:Type="String">artfil wow</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">mk_sig</Data></Cell>
+			<Cell><Data ss:Type="String">BellumDaemonium</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Тоскa </Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">AdmiralIrya 鮫</Data></Cell>
+			<Cell><Data ss:Type="String">Adnirallrya</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">MotherLolia</Data></Cell>
+			<Cell><Data ss:Type="String">MotherLolia</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">COFAVO</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">BLIN OLEG</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">shimoriz abuser</Data></Cell>
+			<Cell><Data ss:Type="String">shimoriz abuser</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Anna Asakura</Data></Cell>
+			<Cell><Data ss:Type="String">Anna Asakura</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1 </Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ХИХИХИ ХА</Data></Cell>
+			<Cell><Data ss:Type="String">Blidun</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">sdjk;)</Data></Cell>
+			<Cell><Data ss:Type="String">Delmarkker</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">343424424</Data></Cell>
+			<Cell><Data ss:Type="String">SCP 6101</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">TBND</Data></Cell>
+			<Cell><Data ss:Type="String">TBND</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Feabrise</Data></Cell>
+			<Cell><Data ss:Type="String">Feabrise</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">OSKALIT</Data></Cell>
+			<Cell><Data ss:Type="String">DIE4YOU</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Ирисыч</Data></Cell>
+			<Cell><Data ss:Type="String">IrisPanda</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Любаев Сергей</Data></Cell>
+			<Cell><Data ss:Type="String">Любаев Сергей</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Матвей Улитчев</Data></Cell>
+			<Cell><Data ss:Type="String">Жак Фреско875</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">MirBils</Data></Cell>
+			<Cell><Data ss:Type="String">Железо 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Сук</Data></Cell>
+			<Cell><Data ss:Type="String">Сук</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">КисуляКис</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">PapaGodGamaer</Data></Cell>
+			<Cell><Data ss:Type="String">PapaGodGamaer</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Тоха</Data></Cell>
+			<Cell><Data ss:Type="String">Coffee Toha</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Ishim</Data></Cell>
+			<Cell><Data ss:Type="String">rittex</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">! BorusoDie</Data></Cell>
+			<Cell><Data ss:Type="String">BorusoDie</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Пажилой жмыхъ</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Morluck</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">elusive</Data></Cell>
+			<Cell><Data ss:Type="String">v1 Elusive</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Krauser II</Data></Cell>
+			<Cell><Data ss:Type="String">Krauser II</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">moonrxze </Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Неофит прайм</Data></Cell>
+			<Cell><Data ss:Type="String">Неофит прайм</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Shinproxy</Data></Cell>
+			<Cell><Data ss:Type="String">Алмаз 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ONLYFANS girl</Data></Cell>
+			<Cell><Data ss:Type="String">3efir</Data></Cell>
+			<Cell><Data ss:Type="String">Мастер+</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String"> </Data></Cell>
+			<Cell><Data ss:Type="String">Danichid</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">かいせん</Data></Cell>
+			<Cell><Data ss:Type="String">666NeShaco666</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">just a failure</Data></Cell>
+			<Cell><Data ss:Type="String">LOSE TO GHOUL XD</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 2</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">! Morinski</Data></Cell>
+			<Cell><Data ss:Type="String">Morinski</Data></Cell>
+			<Cell><Data ss:Type="String">Бронза 1</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">ты в мyте чудище</Data></Cell>
+			<Cell><Data ss:Type="String">ты в мyте чудище</Data></Cell>
+			<Cell><Data ss:Type="String">Серебро 4</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Карась Горбатый</Data></Cell>
+			<Cell><Data ss:Type="String">карась горбатый</Data></Cell>
+			<Cell><Data ss:Type="String">Золото 3</Data></Cell>
+		</Row>
+		<Row>
+			<Cell><Data ss:Type="String">Аматерасу</Data></Cell>
+			<Cell><Data ss:Type="String">Шако Король</Data></Cell>
+			<Cell><Data ss:Type="String">Платина 4</Data></Cell>
+		</Row>	</Table>
+</Worksheet>
+</Workbook>
